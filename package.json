@@ -1,0 +1,34 @@
+{
+  "name": "mobild",
+  "version": "1.0.0",
+  "description": "移动端构建架子",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp-dev": "gulp",
+    "gulp-build": "gulp build",
+    "gulp-git": "gulp git"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wsp971/mobilPageBuild.git"
+  },
+  "author": "wangshiping",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wsp971/mobilPageBuild/issues"
+  },
+  "homepage": "https://github.com/wsp971/mobilPageBuild#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglifycss": "^1.0.9"
+  },
+  "devDependencies": {
+    "gulp-clean": "^0.4.0",
+    "gulp-git": "^2.5.2",
+    "gulp-rev": "^8.1.1",
+    "gulp-rev-collector": "^1.2.4",
+    "gulp-sequence": "^1.0.0"
+  }
+}

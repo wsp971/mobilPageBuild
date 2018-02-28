@@ -1,0 +1,80 @@
+@function rem($px) {
+  @if $px == 0 {
+    @return 0;
+  }
+  @if $px <=2 and $px > 0 {
+    @return 1px;
+  }
+  @else {
+    @return $px / ($px * 0 + 1) / 40 * 1rem;
+  }
+}
+
+/* 图片路径 */
+$imgPath : '../images';
+
+%oneline{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+%twoline{
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+%fourline{
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@mixin flex($pos: space-between){
+  display: flex;
+  flex-flow: row no-wrap;
+  justify-content: $pos;
+}
+/**
+ * space-around
+ * space-between
+ * center
+ */
+%spr{
+  background-image: url(#{$imgPath}/spr.png?__inline);
+  background-size: rem(180px) auto;
+  background-repeat: no-repeat;
+  display: block;
+}
+@mixin height($n){
+  height: rem($n);
+  line-height: rem($n);
+}
+@mixin centerWidth($w: 710px){
+  width: rem($w);
+  margin: 0 auto;
+}
+@mixin pCenter(){
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+.hidden{
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  line-height: 0;
+  text-indent: rem(-9999px);
+}
+.wrapper{
+  width: rem(750);  // 计算方式  750/40 ＝ 18.75rem
+  height: auto;//如果没有高度限制，使用auto
+  overflow: hidden;//非必选项，页面有 sticky 请不要使用
+  margin: 0 auto;
+}
+.test{
+  display: block;
+}
