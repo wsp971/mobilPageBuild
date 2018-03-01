@@ -1,0 +1,22 @@
+@import "./public/color";
+@import "./public/maxmin";
+/*SASS 约定_开头的sass文件为导入文件、不单独编译出css文件*/
+.wrap{
+  border: $border-grey;
+}
+.nexttest{
+  @import "./public/nextimport";
+}
+.notice{
+  background: $grey;
+  color: $white;
+  @include round-corners;
+}
+
+ul.plain{
+  color: $white;
+  background:$grey;
+  @include no-bullets;
+}
+
+

@@ -15,7 +15,7 @@ gulp.task("sass",function(){
 });
 
 //压缩及生成hash版本
-gulp.task("uglifycss" ,function(){
+gulp.task("uglifycss" ,["sass"],function(){
     console.log("task uglifycss start...");
     return  gulp.src("./css/*.css").pipe(uglifycss({uglyComments:true})).pipe(rev()).pipe(gulp.dest("./css/rev/")).pipe(rev.manifest()).pipe(gulp.dest("./rev"));
 });
@@ -33,7 +33,7 @@ gulp.task("clean-html",function(){
 });
 
 //发布、及发布最后生成的html到html/rev 文件夹下
-gulp.task("release", ["clean-css","sass","uglifycss"],function(){
+gulp.task("release",function(){
    console.log("task rev start ...");
    return gulp.src(['./rev/*.json',"./html/src/*.html"]).pipe(revCollector(
        {
@@ -44,34 +44,6 @@ gulp.task("release", ["clean-css","sass","uglifycss"],function(){
    )).pipe(gulp.dest("./html/rev/"));
 });
 
-gulp.task("git-pull", function(){
-   git.pull("origin","master", function(err){
-       if(err){
-           console.log("git-pull err:" + err);
-       }
-   })
-});
-
-gulp.task("git-add", function(){
-   return gulp.src("./css/*").pipe(git.add());
-});
-
-gulp.task("git-commit", function(){
-   gulp.src("./*").pipe(git.commit("gulp-commit" + new Date(),{args: '-m user: wangshiping'}));
-
-});
-
-
-
-gulp.task("git-push", function(){
-    git.push("origin","master", function(err){
-        if(err){
-            console.log("git-push err" + err);
-        }
-    })
-});
-
-gulp.task("git",gulpSequence('git-pull',"git-add","git-commit","git-push"));
 
 
 //开发过程中要监听文件，之后编译
@@ -84,10 +56,47 @@ gulp.task("watch",function(){
     return watcher;
 });
 
+
 //默认开发任务
 gulp.task("default",['sass','watch'], function(){
     console.log("gulp end...");
 });
 
 //发布生成的html
-gulp.task("build",gulpSequence(["uglifycss","clean-html"],"release"));
+gulp.task("build",gulpSequence("clean-css",["uglifycss","clean-html"],"release"));
+
+
+
+//git 提交相关
+gulp.task("git-pull", function(){
+    git.pull("origin","master", function(err){
+        if(err){
+            console.log("git-pull err:" + err);
+        }
+    })
+});
+
+gulp.task('init', function () {
+    git.init(function (err) {
+        if (err) throw err;
+    });
+});
+
+gulp.task("add", function(){
+    return gulp.src("./css/*").pipe(git.add());
+});
+
+gulp.task("git-commit", function(){
+    gulp.src("./*").pipe(git.commit("gulp-commit" + new Date(),{args: '-m user: wangshiping'}));
+
+});
+
+gulp.task("git-push", function(){
+    git.push("origin","master", function(err){
+        if(err){
+            console.log("git-push err" + err);
+        }
+    })
+});
+
+gulp.task("git",gulpSequence('init',"add","git-commit","git-push"));

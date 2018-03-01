@@ -1,0 +1,32 @@
+@charset "UTF-8";
+/*可以通过！default来申明默认值、导入过程中如果声明了、就会被覆盖，用于一些属性的订制*/
+/*圆角混合器*/
+/**/
+/*SASS 约定_开头的sass文件为导入文件、不单独编译出css文件*/
+.wrap {
+  border: 1px solid #eeeeee; }
+
+.nexttest {
+  /*嵌套导入片段
+用来在某个范围内导入内容
+
+*/ }
+  .nexttest aside {
+    background: blue;
+    color: white; }
+
+.notice {
+  background: #cccccc;
+  color: #ffffff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px; }
+
+ul.plain {
+  color: #ffffff;
+  background: #cccccc;
+  list-style: none; }
+  ul.plain li {
+    list-style-image: none;
+    list-style-type: none;
+    margin-left: 0; }

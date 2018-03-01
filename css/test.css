@@ -104,4 +104,5 @@ html {
   width: 100px;
   margin: 0 auto;
   color: #555555;
-  background-color: #fff; }
+  background-color: #fff;
+  padding: 0; }
