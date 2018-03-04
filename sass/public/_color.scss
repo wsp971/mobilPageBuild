@@ -5,7 +5,10 @@ $grey: #cccccc;
 $black: #000000;
 $white: #ffffff;
 $light-grey: #eeeeee;
+$transparent: transparent;
 $border-grey: 1px solid $light-grey;
 /*可以通过！default来申明默认值、导入过程中如果声明了、就会被覆盖，用于一些属性的订制*/
 $border-black: 1px solid $black !default;
 
+$error: #fdd;
+$error-border: $red;

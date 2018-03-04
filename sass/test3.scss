@@ -1,22 +1,144 @@
 @import "./public/color";
 @import "./public/maxmin";
+/*本篇为sass 规则的演练样式*/
 /*SASS 约定_开头的sass文件为导入文件、不单独编译出css文件*/
 .wrap{
   border: $border-grey;
 }
+
+/*导入片段*/
 .nexttest{
   @import "./public/nextimport";
 }
+
+/*混合器*/
 .notice{
   background: $grey;
   color: $white;
   @include round-corners;
 }
 
+/*含嵌套规则的混合器*/
 ul.plain{
   color: $white;
   background:$grey;
   @include no-bullets;
 }
+
+/*带参数的混合器*/
+a{
+  @include link-colors($blue,$red,$green);
+}
+/*传值时，可以带上定义字段*/
+a.test{
+  @include link-colors($normal:$green,$hover:$blue,$visited:$grey);
+}
+/*调用有默认参数*/
+a.test2{
+  @include link-colors2($red);
+}
+
+
+/*继承*/
+
+.error{
+  border: 1px solid $error-border;
+  background: $error;
+  a{
+     @include link-colors2($green);
+  }
+  h1 &{
+      color: $white;
+      line-height: 16px;
+      font-size: 16px;
+  }
+  @at-root h1{
+      color: $blue;
+  }
+}
+
+.seriousError{
+  @extend .error;
+  border-width: 3px;
+}
+/*参数数量可变的mixin*/
+
+.container{
+  @include box-shadow(0px 1px 2px #333,2px 3px 4px #ccc);
+}
+
+
+
+
+/*向mixmin 传递片段*/
+.button-green{
+  @include button{
+    background: $green;
+  }
+}
+
+/*变量作用域和内容片段*/
+/**
+一个内容片段传进mixin 中时，作用域是在定义他的地方
+*/
+
+$color: $green;
+
+@mixin button($color: $white){
+  color: $color;
+  @content;
+  border: 1px solid $grey;
+}
+
+.green-button{
+  @include button($red){
+    background: $color;  /*该color的作用域是定义的地方，即$color 取 外层定义$green,而不会是 $white*/
+  }
+}
+
+/*
+那么到底extend 和mixin 用哪个比较好？什么情况下用比较适合？
+
+*/
+
+.button{
+  background: $blue;
+}
+@mixin button{
+  background: $green;
+}
+.button1{
+  @extend .button;
+}
+.button2{
+  @extend .button;
+}
+
+.button3{
+  @include button;
+}
+.button4{
+  @include button;
+}
+
+
+/*
+1. extend 能生成DRY式的代码，体积较小，但是 mixin 可以传参数，足够灵活。
+2. extend 生成的代码更倾向于 样式和选择器之间关系比较紧密的时候。
+3. 大多数情况还是mixin 用的更多。
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
 
 

@@ -1,0 +1,112 @@
+/*
+description: Sass 的表达式和控制命令
+*/
+
+/*插值语句  可以在选择器或者属性中使用变量*/
+
+@import "public/color";
+$name: foo;
+$attr: border;
+p.#{$name} {
+  #{$attr}-color: blue;
+}
+
+/*at-root 的使用
+可以跳出选择器
+at-root 与 & 的使用
+应用于@keyframe
+
+*/
+
+p{
+  color:$blue;
+  span{
+    color: $white;
+    @at-root {
+        .test{
+            background: $red;
+        }
+    }
+  }
+}
+
+.child{
+  @at-root .parent &{
+      color: $red;
+  }
+}
+
+.demo{
+  animotion : motion 3s infinite;
+  @at-root {
+      @keyframes motion {
+        
+      }
+  }
+}
+
+
+/*if() 是sass的一个内置函数*/
+
+@mixin test($condion){
+  $color: if(condion,$blue,$red);
+  color: $color;
+}
+.firstClass{
+  @include test(true);
+}
+.secondClass{
+  @include test(false);
+}
+
+
+/*@if 返回语句*/
+
+@mixin txt($weight){
+  color: $white;
+  @if $weight == bold {
+    font-weight: bold;
+  }
+}
+.txt1{
+  @include txt(bold);
+}
+.txt2{
+  @include txt(normal);
+}
+
+@mixin txtv2($weight){
+  color: $white;
+  @if($weight == bold){
+    font-weight: bold;
+  }@else if( $weight == light){
+    font-weight: 100;
+  }@else if($weight == heavey){
+    font-weight: 500;
+  }@else{
+    font-weight: normal;
+  }
+
+}
+
+.txt3{
+  @include txtv2(bold);
+}
+.txt4{
+  @include txtv2(light);
+}
+.txt5{
+  @include txtv2(heavey);
+}
+.txt6{
+  @include txtv2(normal);
+}
+
+/*for 用于循环输出 有两种  一种是 from start through end   另一种是  from  start to end*/
+
+@for $i from 1 through 4{
+  .col-#{$i}{
+    width: 100/4 * $i + %;
+  }
+}
+
