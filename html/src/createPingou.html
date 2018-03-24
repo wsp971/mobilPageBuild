@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>创建拼购</title>
+    <link rel="stylesheet" href="../../css/pingouManager/createPingou.css">
+</head>
+<body>
+<div id="vueWrapper">
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                京东拼购
+                <span class="subtitle">管理系统</span>
+            </div>
+            <div class="menu">
+                <div class="item active">创建拼购</div>
+                <div class="item">管理已创建的拼购</div>
+                <div class="item">商家数据</div>
+                <div class="item">报名拼购频道</div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="form">
+            <div class="form-control">
+                <label for="" class="star">拼购活动时间:</label>
+                <div class="input-container">
+                    <input type="text" placeholder="开始时间" class="min">
+                    <label for="" >到</label>
+                    <input type="text" placeholder="结束时间" class="min error" >
+                    <span class="errormsg"><i class="icon icon-error"></i>错误信息错误信息</span>
+                    <p class="desc">说明：拼购促销时长=拼购活动时长+成团有效时长。到达拼购活动结束时间后，用户将无法开团，但仍然可以参加已开的团。</p>
+                </div>
+            </div>
+            <div class="form-control">
+                <label for="" class="star">拼购成团人数：</label>
+                <div class="input-container">
+                    <div class="radio checked"><input type="radio"><span class="text">2人</span></div>
+                    <div class="radio"><input type="radio"><span class="text">3人</span></div>
+                    <div class="radio"><input type="radio"><span class="text">10人</span></div>
+                    <div class="radio"><input type="radio"><span class="text">其他</span></div>
+                    <input type="text" placeholder="最少2人" class="error">
+                    <span class="errormsg"><i class="icon icon-error"></i>错误信息错误信息</span>
+                </div>
+            </div>
+            <div class="form-control">
+                <label for="" class="star">成团有效时长:</label>
+                <input type="text" placeholder="">小时
+            </div>
+            <div class="line"></div>
+            <div class="form-control">
+                <label for="" >商品编号:</label>
+                <input type="text" placeholder="">
+                <label for="">SKU名称:</label>
+                <input type="text" placeholder="">
+            </div>
+            <div class="form-control">
+                <label for="">SKU编号:</label>
+                <div class="input-container">
+                    <input type="text" placeholder="">
+                    <p class="desc">说明：多个输入以英文逗号间隔</p>
+                </div>
+            </div>
+            <div class="form-control">
+                <div class="button-group">
+                    <a href="javascript:;" class="button button-normal">查询</a>
+                    <a href="javascript:;" class="button button-grey button-middle">重置</a>
+                </div>
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+            <tr>
+                <td style="width: 58px;"><div class="checkbox"><input type="checkbox"></div></td>
+                <td style="width:416px;">商品信息</td>
+                <td style="width:238px;">SKU编号</td>
+                <td>京东价</td>
+                <td>折扣</td>
+                <td>减价</td>
+                <td>拼购价</td>
+                <td>操作</td>
+            </tr>
+            
+            </thead>
+            <tbody>
+            <tr>
+                <td><div class="checkbox checked"><input type="checkbox"></div></td>
+                <td>
+                    <div class="product">
+                        <img src="" alt="" class="product-img">
+                        <div class="product-info">
+                            <p class="product-info-name">三星 Galaxy S7 edge（G9350）32G版 铂光金移动联通电信4G手机 双卡双待 骁龙820手机</p>
+                            <p class="product-info-desc">商品编号:456464545465</p>
+                            <p class="product-info-desc">库存还剩65件</p>
+                        </div>
+                    </div>
+                </td>
+                <td> <span class="label">主推</span>24371476482 <a href="" class="link">更改</a><br><a href="javascript:;" class="link">收起3个SKU</a></td>
+                <td>￥1888.00</td>
+                <td><input type="text" class="table-input error" value="0.08">折</td>
+                <td>减￥<input type="text" class="table-input" value="0.08"></td>
+                <td><span class="import">￥</span><input type="text" class="table-input import" value="0.08"></td>
+                <td><a href="javascript:;" class="link">高级设置</a></td>
+            </tr>
+            <tr>
+                <td><div class="checkbox"><input type="checkbox"></div></td>
+                <td>
+                    <div class="product">
+                        <img src="" alt="" class="product-img">
+                        <div class="product-info">
+                            <p class="product-info-name">三星 Galaxy S7 edge（G9350）32G版 铂光金移动联通电信4G手机 双卡双待 骁龙820手机</p>
+                            <p class="product-info-desc">商品编号:456464545465</p>
+                            <p class="product-info-desc">库存还剩65件</p>
+                        </div>
+                    </div>
+                
+                </td>
+                <td> <span class="label">主推</span>24371476482 <a href="" class="link">更改</a><br><a href="javascript:;" class="link">收起3个SKU</a></td>
+                <td>￥1888.00</td>
+                <td><input type="text" class="table-input error" value="0.08">折</td>
+                <td>减￥<input type="text" class="table-input" value="0.08"></td>
+                <td><span class="import">￥</span><input type="text" class="table-input import" value="0.08"></td>
+                <td><a href="javascript:;" class="link">高级设置</a></td>
+            </tr>
+            <tr class="child">
+                <td><div class="checkbox"><input type="checkbox"></div></td>
+                <td>
+                    <div class="product">
+                        <img src="" alt="" class="product-img">
+                        <div class="product-info">
+                            <p class="product-info-name">三星 Galaxy S7 edge（G9350）32G版 铂光金移动联通电信4G手机 双卡双待 骁龙820手机</p>
+                        </div>
+                    </div>
+                </td>
+                <td> 24371476482 </td>
+                <td>￥1888.00</td>
+                <td><input type="text" class="table-input error" value="0.08">折</td>
+                <td>减￥<input type="text" class="table-input" value="0.08"></td>
+                <td><span class="import">￥</span><input type="text" class="table-input import" value="0.08"></td>
+                <td></td>
+            </tr>
+            <tr class="child">
+                <td><div class="checkbox"><input type="checkbox"></div></td>
+                <td>
+                    <div class="product">
+                        <img src="" alt="" class="product-img">
+                        <div class="product-info">
+                            <p class="product-info-name">三星 Galaxy S7 edge（G9350）32G版 铂光金移动联通电信4G手机 双卡双待 骁龙820手机</p>
+                        </div>
+                    </div>
+                </td>
+                <td>24371476482 </td>
+                <td>￥1888.00</td>
+                <td><input type="text" class="table-input error" value="0.08">折</td>
+                <td>减￥<input type="text" class="table-input" value="0.08"></td>
+                <td><span class="import">￥</span><input type="text" class="table-input import" value="0.08"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><div class="checkbox"><input type="checkbox"></div></td>
+                <td>
+                    <div class="product">
+                        <img src="" alt="" class="product-img">
+                        <div class="product-info">
+                            <p class="product-info-name">三星 Galaxy S7 edge（G9350）32G版 铂光金移动联通电信4G手机 双卡双待 骁龙820手机</p>
+                            <p class="product-info-desc">商品编号:456464545465</p>
+                            <p class="product-info-desc">库存还剩65件</p>
+                        </div>
+                    </div>
+                
+                </td>
+                <td> <span class="label">主推</span>24371476482 <a href="" class="link">更改</a><br><a href="javascript:;" class="link">收起3个SKU</a></td>
+                <td>￥1888.00</td>
+                <td><input type="text" class="table-input error" value="0.08">折</td>
+                <td>减￥<input type="text" class="table-input" value="0.08"></td>
+                <td><span class="import">￥</span><input type="text" class="table-input import" value="0.08"></td>
+                <td><a href="javascript:;" class="link">高级设置</a></td>
+            </tr>
+            <tr>
+                <td><div class="checkbox"><input type="checkbox"></div></td>
+                <td>
+                    <div class="product">
+                        <img src="" alt="" class="product-img">
+                        <div class="product-info">
+                            <p class="product-info-name">三星 Galaxy S7 edge（G9350）32G版 铂光金移动联通电信4G手机 双卡双待 骁龙820手机</p>
+                            <p class="product-info-desc">商品编号:456464545465</p>
+                            <p class="product-info-desc">库存还剩65件</p>
+                        </div>
+                    </div>
+                
+                </td>
+                <td> <span class="label">主推</span>24371476482 <a href="" class="link">更改</a><br><a href="javascript:;" class="link">收起3个SKU</a></td>
+                <td>￥1888.00</td>
+                <td><input type="text" class="table-input error" value="0.08">折</td>
+                <td>减￥<input type="text" class="table-input" value="0.08"></td>
+                <td><span class="import">￥</span><input type="text" class="table-input import" value="0.08"></td>
+                <td><a href="javascript:;" class="link">高级设置</a></td>
+            </tr>
+            <tr>
+                <td><div class="checkbox"><input type="checkbox"></div></td>
+                <td>
+                    <div class="product">
+                        <img src="" alt="" class="product-img">
+                        <div class="product-info">
+                            <p class="product-info-name">三星 Galaxy S7 edge（G9350）32G版 铂光金移动联通电信4G手机 双卡双待 骁龙820手机</p>
+                            <p class="product-info-desc">商品编号:456464545465</p>
+                            <p class="product-info-desc">库存还剩65件</p>
+                        </div>
+                    </div>
+                
+                </td>
+                <td> <span class="label">主推</span>24371476482 <a href="" class="link">更改</a><br><a href="javascript:;" class="link">收起3个SKU</a></td>
+                <td>￥1888.00</td>
+                <td><input type="text" class="table-input error" value="0.08">折</td>
+                <td>减￥<input type="text" class="table-input" value="0.08"></td>
+                <td><span class="import">￥</span><input type="text" class="table-input import" value="0.08"></td>
+                <td><a href="javascript:;" class="link">高级设置</a></td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="page-container">
+            <div class="page right">
+                <span>共6500条</span>
+                <span class="page-item disable"> < </span>
+                <span class="page-item active">1</span>
+                <span class="page-item">2</span>
+                <span class="page-item">3</span>
+                <span class="page-item">4</span>
+                <span class="page-item">5</span>
+                <span class="page-item omit"></span>
+                <span class="page-item">100</span>
+                <span class="page-item"> > </span>
+                跳至<input type="text" >页
+            </div>
+        </div>
+        <div class="button-group">
+            <a href="javascript:;" class="button button-normal">查询</a>
+            <a href="javascript:;" class="button button-grey button-middle">重置</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

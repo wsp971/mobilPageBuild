@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "gulp-clean": "^0.4.0",
+    "gulp-connect": "^5.5.0",
     "gulp-git": "^2.5.2",
     "gulp-rev": "^8.1.1",
     "gulp-rev-collector": "^1.2.4",

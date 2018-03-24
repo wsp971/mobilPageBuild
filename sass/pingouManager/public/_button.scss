@@ -1,0 +1,139 @@
+$button-width: 135px;
+$button-height: 35px;
+$button-small-width: 74px;
+@import "./color";
+@import "./common";
+.button {
+    display: inline-block;
+    width: $button-width;
+    height: $button-height;
+    line-height: 35px;
+    text-align: center;
+    border-radius:2px;
+    &-small{
+      width: 74px;
+    }
+    &-middle{
+      width: 108px;
+    }
+    &-normal{
+      color: $white;
+      background: $theme-color;
+      border:none;
+      &:hover{
+        background: $button-hover;
+      }
+      &:active{
+        background: $button-clicked;
+      }
+      &.loading{
+          :before{
+              display: inline-block;
+              width: 15px;
+              height: 16px;
+              background:url("../../../images/loading.png");
+          }
+      }
+    }
+    &-grey{
+      color: $button-grey;
+      background: $white;
+      border: 1px solid $border-color;
+      &:hover{
+          border-color: $theme-color;
+      }
+      &:active{
+          border-color: $button-clicked;
+      }
+      &.loading{
+        &:before{
+          display: inline-block;
+          width: 15px;
+          height: 16px;
+          background:url("../../../images/loading2.png");
+        }
+      }
+    }
+    &-disable{
+      color: $white;
+      background: $button-disabled;
+    }
+}
+.button-group{
+    margin: auto;
+    text-align: center;
+    .button {
+      margin:{
+        left: 10px;
+        right: 10px;
+      }
+    }
+}
+
+.icon{
+  display:inline-block;
+  vertical-align: middle;
+  &-error{
+    width: 17px;
+    height: 16px;
+    background: url("../../../images/error-icon.png") no-repeat;
+    background-size: 17px 16px;
+  }
+}
+
+
+.page{
+
+  &-container{
+    @include clearfix;
+    font-size: 12px;
+    margin-top: 20px;
+    color:$input-text-color;
+  }
+  &-item{
+    width: 30px;
+    height:30px;
+    padding: 5px;
+    margin: 0 3px;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid $border-color;
+    cursor: pointer;
+    &:hover{
+      border-color: $theme-color;
+    }
+    &.active{
+       border-color: $theme-color;
+    }
+    &.disable{
+        //border
+        color:#c3cbd6;
+        cursor:auto;
+      &:hover{
+        border: 1px solid $border-color;
+      }
+    }
+    &.omit{
+       &::before{
+          content:"...";
+       }
+       &:hover{
+          border: 1px solid $border-color;
+       }
+    }
+  }
+  &-num{
+    height: 30px;
+  }
+  input[type='text']{
+    width: 50px;
+    height: 30px;
+  }
+  &.left{
+    float: left;
+  }
+  &.right{
+    float: right;
+  }
+}
+

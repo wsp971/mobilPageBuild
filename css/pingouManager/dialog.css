@@ -1,0 +1,637 @@
+@charset "UTF-8";
+/*颜色定义*/
+/*主体*/
+/*白色*/
+/*主题色*/
+/*整体背景颜色*/
+/*边框颜色*/
+/*头部边框*/
+/*文本*/
+/*头部标题颜色*/
+/*文本颜色-强调*/
+/*提示性文字*/
+/*链接颜色*/
+/*错误颜色*/
+/*表格*/
+/*表格文字颜色*/
+/*表格提示颜色*/
+/*选中行背景颜色*/
+/*buttons*/
+/*button背景色*/
+/*hover 背景色*/
+/*点击背景色*/
+/*不可用背景色*/
+/*button 边框*/
+/*灰色button 文本颜色*/
+/*form*/
+/*input disabled*/
+/*input text color*/
+/**/
+/*input hover*/
+/*select option*/
+/*shadow*/
+/*弹框*/
+/* 重置样式 */
+* {
+  -webkit-tap-highlight-color: transparent;
+  outline: 0; }
+
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline; }
+
+img {
+  border: 0 none;
+  vertical-align: top; }
+
+i, em {
+  font-style: normal; }
+
+ol, ul {
+  list-style: none; }
+
+input, select, button, h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-family: inherit; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+a {
+  text-decoration: none;
+  color: #666; }
+
+.hide {
+  display: none; }
+
+/*颜色定义*/
+/*主体*/
+/*白色*/
+/*主题色*/
+/*整体背景颜色*/
+/*边框颜色*/
+/*头部边框*/
+/*文本*/
+/*头部标题颜色*/
+/*文本颜色-强调*/
+/*提示性文字*/
+/*链接颜色*/
+/*错误颜色*/
+/*表格*/
+/*表格文字颜色*/
+/*表格提示颜色*/
+/*选中行背景颜色*/
+/*buttons*/
+/*button背景色*/
+/*hover 背景色*/
+/*点击背景色*/
+/*不可用背景色*/
+/*button 边框*/
+/*灰色button 文本颜色*/
+/*form*/
+/*input disabled*/
+/*input text color*/
+/**/
+/*input hover*/
+/*select option*/
+/*shadow*/
+/*弹框*/
+.button {
+  display: inline-block;
+  width: 135px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  border-radius: 2px; }
+  .button-small {
+    width: 74px; }
+  .button-middle {
+    width: 108px; }
+  .button-normal {
+    color: #ffffff;
+    background: #ff3333;
+    border: none; }
+    .button-normal:hover {
+      background: #ff5c5c; }
+    .button-normal:active {
+      background: #dd1623; }
+    .button-normal.loading :before {
+      display: inline-block;
+      width: 15px;
+      height: 16px;
+      background: url("../../../images/loading.png"); }
+  .button-grey {
+    color: #657180;
+    background: #ffffff;
+    border: 1px solid #d7dde4; }
+    .button-grey:hover {
+      border-color: #ff3333; }
+    .button-grey:active {
+      border-color: #dd1623; }
+    .button-grey.loading:before {
+      display: inline-block;
+      width: 15px;
+      height: 16px;
+      background: url("../../../images/loading2.png"); }
+  .button-disable {
+    color: #ffffff;
+    background: #c3cbd6; }
+
+.button-group {
+  margin: auto;
+  text-align: center; }
+  .button-group .button {
+    margin-left: 10px;
+    margin-right: 10px; }
+
+.icon {
+  display: inline-block;
+  vertical-align: middle; }
+  .icon-error {
+    width: 17px;
+    height: 16px;
+    background: url("../../../images/error-icon.png") no-repeat;
+    background-size: 17px 16px; }
+
+.page-container {
+  font-size: 12px;
+  margin-top: 20px;
+  color: #657180; }
+  .page-container::after {
+    clear: both;
+    content: "";
+    display: block; }
+
+.page-item {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  margin: 0 3px;
+  display: inline-block;
+  text-align: center;
+  border: 1px solid #d7dde4;
+  cursor: pointer; }
+  .page-item:hover {
+    border-color: #ff3333; }
+  .page-item.active {
+    border-color: #ff3333; }
+  .page-item.disable {
+    color: #c3cbd6;
+    cursor: auto; }
+    .page-item.disable:hover {
+      border: 1px solid #d7dde4; }
+  .page-item.omit::before {
+    content: "..."; }
+  .page-item.omit:hover {
+    border: 1px solid #d7dde4; }
+
+.page-num {
+  height: 30px; }
+
+.page input[type='text'] {
+  width: 50px;
+  height: 30px; }
+
+.page.left {
+  float: left; }
+
+.page.right {
+  float: right; }
+
+/*颜色定义*/
+/*主体*/
+/*白色*/
+/*主题色*/
+/*整体背景颜色*/
+/*边框颜色*/
+/*头部边框*/
+/*文本*/
+/*头部标题颜色*/
+/*文本颜色-强调*/
+/*提示性文字*/
+/*链接颜色*/
+/*错误颜色*/
+/*表格*/
+/*表格文字颜色*/
+/*表格提示颜色*/
+/*选中行背景颜色*/
+/*buttons*/
+/*button背景色*/
+/*hover 背景色*/
+/*点击背景色*/
+/*不可用背景色*/
+/*button 边框*/
+/*灰色button 文本颜色*/
+/*form*/
+/*input disabled*/
+/*input text color*/
+/**/
+/*input hover*/
+/*select option*/
+/*shadow*/
+/*弹框*/
+/* 重置样式 */
+* {
+  -webkit-tap-highlight-color: transparent;
+  outline: 0; }
+
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline; }
+
+img {
+  border: 0 none;
+  vertical-align: top; }
+
+i, em {
+  font-style: normal; }
+
+ol, ul {
+  list-style: none; }
+
+input, select, button, h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-family: inherit; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+a {
+  text-decoration: none;
+  color: #666; }
+
+.hide {
+  display: none; }
+
+/*颜色定义*/
+/*主体*/
+/*白色*/
+/*主题色*/
+/*整体背景颜色*/
+/*边框颜色*/
+/*头部边框*/
+/*文本*/
+/*头部标题颜色*/
+/*文本颜色-强调*/
+/*提示性文字*/
+/*链接颜色*/
+/*错误颜色*/
+/*表格*/
+/*表格文字颜色*/
+/*表格提示颜色*/
+/*选中行背景颜色*/
+/*buttons*/
+/*button背景色*/
+/*hover 背景色*/
+/*点击背景色*/
+/*不可用背景色*/
+/*button 边框*/
+/*灰色button 文本颜色*/
+/*form*/
+/*input disabled*/
+/*input text color*/
+/**/
+/*input hover*/
+/*select option*/
+/*shadow*/
+/*弹框*/
+.button {
+  display: inline-block;
+  width: 135px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  border-radius: 2px; }
+  .button-small {
+    width: 74px; }
+  .button-middle {
+    width: 108px; }
+  .button-normal {
+    color: #ffffff;
+    background: #ff3333;
+    border: none; }
+    .button-normal:hover {
+      background: #ff5c5c; }
+    .button-normal:active {
+      background: #dd1623; }
+    .button-normal.loading :before {
+      display: inline-block;
+      width: 15px;
+      height: 16px;
+      background: url("../../../images/loading.png"); }
+  .button-grey {
+    color: #657180;
+    background: #ffffff;
+    border: 1px solid #d7dde4; }
+    .button-grey:hover {
+      border-color: #ff3333; }
+    .button-grey:active {
+      border-color: #dd1623; }
+    .button-grey.loading:before {
+      display: inline-block;
+      width: 15px;
+      height: 16px;
+      background: url("../../../images/loading2.png"); }
+  .button-disable {
+    color: #ffffff;
+    background: #c3cbd6; }
+
+.button-group {
+  margin: auto;
+  text-align: center; }
+  .button-group .button {
+    margin-left: 10px;
+    margin-right: 10px; }
+
+.icon {
+  display: inline-block;
+  vertical-align: middle; }
+  .icon-error {
+    width: 17px;
+    height: 16px;
+    background: url("../../../images/error-icon.png") no-repeat;
+    background-size: 17px 16px; }
+
+.page-container {
+  font-size: 12px;
+  margin-top: 20px;
+  color: #657180; }
+  .page-container::after {
+    clear: both;
+    content: "";
+    display: block; }
+
+.page-item {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  margin: 0 3px;
+  display: inline-block;
+  text-align: center;
+  border: 1px solid #d7dde4;
+  cursor: pointer; }
+  .page-item:hover {
+    border-color: #ff3333; }
+  .page-item.active {
+    border-color: #ff3333; }
+  .page-item.disable {
+    color: #c3cbd6;
+    cursor: auto; }
+    .page-item.disable:hover {
+      border: 1px solid #d7dde4; }
+  .page-item.omit::before {
+    content: "..."; }
+  .page-item.omit:hover {
+    border: 1px solid #d7dde4; }
+
+.page-num {
+  height: 30px; }
+
+.page input[type='text'] {
+  width: 50px;
+  height: 30px; }
+
+.page.left {
+  float: left; }
+
+.page.right {
+  float: right; }
+
+input[type=text] {
+  width: 260px;
+  height: 24px;
+  border: 1px solid #d7dde4;
+  color: #657180;
+  margin: 5px;
+  padding-left: 5px; }
+  input[type=text].min {
+    width: 180px; }
+  input[type=text]::-webkit-input-placeholder {
+    color: #c3cbd6; }
+  input[type=text]::-moz-placeholder {
+    color: #c3cbd6; }
+  input[type=text]::placeholder {
+    color: #c3cbd6; }
+  input[type=text]:-ms-input-placeholder {
+    color: #c3cbd6; }
+  input[type=text]:hover {
+    border-color: #657180; }
+  input[type=text]:focus {
+    border-color: #657180;
+    box-shadow: 1px 1px 3px #d7dde4, -1px -1px 3px #d7dde4; }
+  input[type=text].disable {
+    background: #f5f7f9; }
+  input[type=text].error {
+    border-color: #ff3333;
+    color: #ff3333; }
+    input[type=text].error + .errormsg {
+      color: #ff3333;
+      display: inline-block;
+      vertical-align: middle;
+      margin: 5px; }
+
+.errormsg {
+  display: none; }
+
+.radio {
+  display: inline-block;
+  position: relative; }
+  .radio::before {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background: url("../../images/radio-default.png");
+    background-size: 16px;
+    vertical-align: baseline;
+    content: ""; }
+  .radio.checked::before {
+    background: url("../../images/radio-checked.png"); }
+  .radio.checked.disable::before {
+    background: url("../../images/radio-checked-disabled.png"); }
+  .radio.disable::before {
+    background: url("../../images/radio-disable.png"); }
+  .radio input[type=radio] {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer; }
+  .radio .text {
+    display: inline-block;
+    margin-left: 2px; }
+
+.checkbox {
+  display: inline-block;
+  position: relative; }
+  .checkbox::before {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background: url("../../images/checkbox.png");
+    background-size: 16px;
+    vertical-align: baseline;
+    content: ""; }
+  .checkbox.checked::before {
+    background: url("../../images/checkbox-checked.png"); }
+  .checkbox input[type=checkbox] {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer; }
+  .checkbox .text {
+    display: inline-block;
+    margin-left: 2px; }
+
+.form-control {
+  margin-bottom: 20px; }
+  .form-control label {
+    display: inline-block;
+    margin: 5px; }
+    .form-control label.star::before {
+      content: "*";
+      color: #ff3333;
+      display: inline; }
+  .form-control .input-container {
+    display: inline-block;
+    vertical-align: top; }
+    .desc, .form-control .input-container .desc {
+      font-size: 12px;
+      color: #c3cbd6;
+      margin-left: 5px; }
+
+.form .line {
+  height: 1px;
+  background: #d7dde4;
+  margin: 20px -40px; }
+
+* {
+  box-sizing: border-box; }
+
+.fixed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100; }
+
+.dialog {
+  width: 465px;
+  margin: auto;
+  background: #ffffff; }
+  .dialog.large {
+    width: 558px; }
+  .dialog-header {
+    padding-left: 15px;
+    height: 38px;
+    line-height: 38px;
+    background: #f5f7f9;
+    color: #464c5b;
+    border-bottom: 1px solid #d7dde4; }
+  .dialog-content {
+    padding: 20px 50px 0;
+    max-height: 606px;
+    overflow-y: auto; }
+  .dialog-footer {
+    height: 80px;
+    display: flex; }
+  .dialog .form label.format {
+    width: 68px;
+    text-align: right; }
+  .dialog .product {
+    height: 100px;
+    display: flex;
+    border-bottom: 1px solid #d7dde4; }
+    .dialog .product-container {
+      border: 1px solid #d7dde4; }
+    .dialog .product input[type=radio] {
+      margin: auto; }
+    .dialog .product-img {
+      width: 80px;
+      height: 80px;
+      border: 1px solid #ededed;
+      display: inline-block;
+      vertical-align: middle;
+      background: #ccc;
+      margin: auto;
+      margin-right: 5px; }
+    .dialog .product-info {
+      margin: auto;
+      display: inline-block;
+      vertical-align: middle;
+      width: 300px;
+      text-align: left;
+      font-size: 12px;
+      color: #657180; }
+      .dialog .product-info-name {
+        color: #464c5b; }
+      .dialog .product-info-desc {
+        color: #9ca7b6; }
+    .dialog .product:last-child {
+      border-bottom: none; }
+
+.alert {
+  width: 395px;
+  background: #262626;
+  margin: 20px auto;
+  padding-top: 30px;
+  padding-bottom: 20px; }
+  .alert .icon {
+    display: block;
+    margin: auto;
+    width: 32px;
+    height: 32px; }
+    .alert .icon-success {
+      background: url("../../images/success.png"); }
+    .alert .icon-warn {
+      background: url("../../images/warn.png"); }
+  .alert-content {
+    text-align: center;
+    color: #ffffff;
+    line-height: 14px;
+    margin: 20px; }
+    .alert-content .sign {
+      color: #3399ff; }
+
+.toast {
+  background: #262626;
+  margin: 20px auto;
+  max-width: 300px;
+  padding: 15px 30px; }
+  .toast-content {
+    color: #ffffff;
+    line-height: 14px; }
+    .toast-content .icon {
+      display: inline-block;
+      margin-top: -2px;
+      margin-right: 20px;
+      width: 32px;
+      height: 32px;
+      vertical-align: middle; }
+      .toast-content .icon-success {
+        background: url("../../images/success.png"); }
+      .toast-content .icon-warn {
+        background: url("../../images/warn.png"); }
+
+.mask {
+  position: fixed;
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0; }

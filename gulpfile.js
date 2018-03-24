@@ -6,12 +6,13 @@ var revCollector = require("gulp-rev-collector");   /*替换页面中的hash文�
 var clean = require("gulp-clean");                  /*清空某个文件或者文件夹*/
 var gulpSequence = require("gulp-sequence");        /*保证依赖任务顺序执行*/
 var git = require("gulp-git");                  /*git 提交文件*/
+var connect = require("gulp-connect");          /*web静态服务器*/
 
 
 //编译sass
 gulp.task("sass",function(){
     console.log("task sass start...");
-    return gulp.src("./sass/*.scss").pipe(sass().on('error',sass.logError)).pipe(gulp.dest("./css"));
+    return gulp.src("./sass/**/*.scss").pipe(sass().on('error',sass.logError)).pipe(gulp.dest("./css"));
 });
 
 //压缩及生成hash版本
@@ -49,7 +50,7 @@ gulp.task("release",function(){
 //开发过程中要监听文件，之后编译
 gulp.task("watch",function(){
     console.log("task watch start...");
-    var watcher = gulp.watch('./sass/**/*.scss',['sass']);
+    var watcher = gulp.watch(['./sass/**/*.scss','./html/**/*.html'],['sass','reload']);
     watcher.on("change", function(event){
         console.log("File: " + event.path + " was " + event.type + ",   run tasks...");
     });
@@ -58,7 +59,7 @@ gulp.task("watch",function(){
 
 
 //默认开发任务
-gulp.task("default",['sass','watch'], function(){
+gulp.task("default",['sass','server','watch'], function(){
     console.log("gulp end...");
 });
 
@@ -100,3 +101,18 @@ gulp.task("git-push", function(){
 });
 
 gulp.task("git",gulpSequence('init',"add","git-commit","git-push"));
+
+
+/*gulp 静态服务器*/
+gulp.task("server", function(){
+    connect.server({
+        root:"./",
+        livereload: true
+    })
+});
+
+/*gulp reload*/
+gulp.task("reload", function(){
+   gulp.src("./html/**/*.html").pipe(connect.reload());
+});
+

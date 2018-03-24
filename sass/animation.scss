@@ -1,0 +1,72 @@
+@keyframes huangdong {
+    25%{
+        transform: translateX(-10px);
+    }
+    75%{
+        transform: translateX(10px);
+    }
+}
+.yaohuang{
+    animation: huangdong 1s infinite linear;
+    width: 100px;
+    height: 30px;
+    background: #ccc;
+}
+
+.appcontainer{
+    width: 375px;
+    height: 667px;
+    margin: 5px auto;
+    background: #ffffff;
+    position: relative;
+    border: 1px solid #dddddd;
+    .header{
+        height:50px;
+        background: #ccc;
+    }
+    .app-menu{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        opacity: 0;
+        left: -100%;
+        top:0;
+        background: rgba(0,0,0,0.5);
+        transition: left 0.5s linear;
+        &.show{
+            left:0;
+            opacity: 1;
+        }
+    }
+
+}
+.appcontainer2{
+    width: 375px;
+    height: 667px;
+    margin: 5px auto;
+    background: #ffffff;
+    position: relative;
+    border: 1px solid #dddddd;
+    .header{
+        height:50px;
+        background: #ccc;
+    }
+    .app-menu{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        opacity: 0;
+        transform: translateX(-100%);
+        top:0;
+        background: rgba(0,0,0,0.5);
+        transition: transform 0.5s linear,opacity  0.5s linear;
+        &.show{
+            transform: translateX(-20%);
+            opacity: 1;
+        }
+    }
+
+}
+
+
+

@@ -1,0 +1,163 @@
+$page-width: 1260px;
+
+@import "./public/color";
+@import "./public/reset";
+@import "./public/common";
+@import "./public/button";
+@import "form";
+@import "dialog";
+body{
+  background: $background-color;
+  font-size: 14px;
+}
+*{
+  box-sizing: border-box;
+}
+.header{
+   background: $white;
+   border-top: 2px solid $border-header;
+   line-height: 70px;
+   box-shadow: 0 3px 5px  #ccc ;
+   .container{
+      box-sizing: border-box;
+      width: $page-width;
+      margin: auto;
+      .logo{
+          font-size: 24px;
+          color: $theme-color;
+          display: inline-block;
+          float: left;
+          .subtitle{
+              font-size: 16px;
+              color: #666666;
+          }
+      }
+      .menu{
+         float: left;
+         margin-left: 140px;
+         font-size: 16px;
+         color: $head-title-color;
+         .item{
+           display:inline-block;
+           padding: 0 10px;
+           margin-right: 100px;
+           cursor: pointer;
+           &.active{
+              color: $theme-color;
+              border-bottom: 3px solid $theme-color;
+           }
+           &:hover{
+             color: $theme-color;
+             border-bottom: 3px solid $theme-color;
+           }
+         }
+      }
+      @include clearfix;
+   }
+}
+.content{
+  width: $page-width;
+  background: $white;
+  margin: 32px auto 0;
+  padding: 40px;
+  .form{
+      @extend .form;
+  }
+}
+.table{
+  border: 1px solid $border-color;
+  margin-top: 50px;
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  text-align: center;
+  color: $table-text-color;
+  .light{
+    color: $table-light-text-color;
+  }
+  .import{
+    color: $theme-color;
+  }
+  .link{
+    cursor: pointer;
+    color: $link-color;
+  }
+  .table-input{
+    width: 45px;
+    height: 30px;
+  }
+  .label{
+    background: $theme-color;
+    font-size: 10px;
+    color: $white;
+  }
+  .product{
+    height: 100px;
+    display:flex;
+    &-img{
+      width: 80px;
+      height: 80px;
+      border: 1px solid #ededed;
+      display:inline-block;
+      vertical-align: middle;
+      background: #ccc;
+      margin: auto;
+    }
+    &-info{
+      margin: auto;
+      display: inline-block;
+      vertical-align: middle;
+      width: 300px;
+      text-align: left;
+      &-name{
+        color:$text-color;
+      }
+      &-desc{
+        color: $table-light-text-color;
+      }
+    }
+
+  }
+  thead{
+    background:$table-thead-color;
+    height: 42px;
+    line-height: 42px;
+    td{
+      border: 1px solid $border-color;
+    }
+  }
+  tbody{
+    background: $white;
+    tr{
+      &:hover{
+        background: $select-tr-color;
+      }
+      //&:nth-child(2n){
+      //  background: $select-tr-color;
+      //}
+      &.child{
+        border: none;
+        background:$select-tr-color;
+        td{
+          border:{
+            top: none;
+            bottom: none;
+            left: 1px solid $border-color;
+            right: 1px solid $border-color;
+          }
+        }
+
+        //&:first-child{
+        //
+        //}
+      }
+      td{
+        border: 1px solid $border-color;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+
+

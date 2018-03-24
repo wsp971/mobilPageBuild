@@ -1,0 +1,68 @@
+/*颜色定义*/
+/*主体*/
+
+$white : #ffffff;   /*白色*/
+$theme-color: #ff3333;  /*主题色*/
+$background-color:#f8f8f8;/*整体背景颜色*/
+$border-color: #d7dde4; /*边框颜色*/
+$border-header: #e93b3d; /*头部边框*/
+
+
+/*文本*/
+$head-title-color: #333333;/*头部标题颜色*/
+$text-color: #464c5b;   /*文本颜色-强调*/
+$light-text-color: #c3cbd6; /*提示性文字*/
+$link-color:#3399ff;  /*链接颜色*/
+$error-color: #ff3333;   /*错误颜色*/
+
+
+/*表格*/
+
+$table-text-color:#657180;  /*表格文字颜色*/
+$table-light-text-color: #9ca7b6;   /*表格提示颜色*/
+$select-tr-color:#f5f7f9; /*选中行背景颜色*/
+$table-thead-color: $select-tr-color;
+
+
+/*buttons*/
+$button-normal: #ff3333;    /*button背景色*/
+$button-hover: #ff5c5c;     /*hover 背景色*/
+$button-clicked: #dd1623;   /*点击背景色*/
+
+$button-disabled: #c3cbd6;  /*不可用背景色*/
+$button-border: #9ca7b6;    /*button 边框*/
+$button-grey: #657180;      /*灰色button 文本颜色*/
+
+
+
+/*form*/
+$input-disabled: #f5f7f9;   /*input disabled*/
+$input-text-color: #657180;  /*input text color*/
+$select-selected:#657180;   /**/
+$input-hover:$select-selected;  /*input hover*/
+$option-color: #657180;         /*select option*/
+$shadow-color: #d7dde4;         /*shadow*/
+
+
+
+/*弹框*/
+$dialog-head-bg-color:#f5f7f9;
+$dialog-head-title-color: #464c5b;
+$alert-bg-color: #262626;
+$mencen-color: rgba(0,0,0,0.5);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

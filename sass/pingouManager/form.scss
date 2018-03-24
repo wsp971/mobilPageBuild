@@ -1,0 +1,173 @@
+@import "./public/color";
+@import "./public/reset";
+@import "./public/button";
+$input-width: 260px;
+$min-input-width:180px;
+$input-height: 24px;
+@mixin input{
+  width: $input-width;
+  height: $input-height;
+  border: 1px solid $border-color;
+  color: $input-text-color;
+  margin: 5px;
+  &.min{
+    width: 180px;
+  }
+  padding:{
+    left: 5px;
+  }
+  &::-webkit-input-placeholder{
+      color: $light-text-color;
+  }
+  &::-moz-placeholder{
+    color: $light-text-color;
+  }
+  &::placeholder{
+    color: $light-text-color;
+  }
+  &:-ms-input-placeholder{
+    color: $light-text-color;
+  }
+  &:hover{
+    border-color: $input-hover;
+  }
+  &:focus{
+    border-color: $input-hover;
+    box-shadow : 1px 1px 3px $shadow-color,-1px -1px 3px $shadow-color;
+  }
+  &.disable{
+    background: $input-disabled;
+  }
+}
+
+input[type=text]{
+  @include input;
+  &.error{
+      border-color: $theme-color;
+      color: $theme-color;
+      & + .errormsg{
+          color: $theme-color;
+          display:inline-block;
+          vertical-align: middle;
+          margin: 5px;
+      }
+  }
+}
+.errormsg{
+  display:none;
+}
+
+.radio{
+  display:inline-block;
+  position: relative;
+  &::before{
+    width:16px;
+    height: 16px;
+    display:inline-block;
+    background: url("../../images/radio-default.png");
+    background-size: 16px;
+    vertical-align: baseline;
+    content:"";
+  }
+  &.checked{
+    &::before{
+      background: url("../../images/radio-checked.png");
+    }
+    &.disable{
+      &::before{
+        background: url("../../images/radio-checked-disabled.png");
+      }
+    }
+  }
+  &.disable{
+    &::before{
+      background: url("../../images/radio-disable.png");
+    }
+  }
+  input[type=radio]{
+    display:inline-block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+  .text{
+    display: inline-block;
+    margin-left: 2px;
+  }
+}
+
+
+.checkbox{
+  display:inline-block;
+  position: relative;
+  &::before{
+      width:16px;
+      height: 16px;
+      display:inline-block;
+      background: url("../../images/checkbox.png");
+      background-size: 16px;
+      vertical-align: baseline;
+      content:"";
+      }
+  &.checked{
+     &::before{
+       background: url("../../images/checkbox-checked.png");
+     }
+  }
+  input[type=checkbox]{
+      display:inline-block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+  }
+  .text{
+      display: inline-block;
+      margin-left: 2px;
+  }
+}
+.form{
+  &-control{
+    margin-bottom: 20px;
+    label{
+      display:inline-block;
+      margin: 5px ;
+      &.star{
+        &::before{
+          content:"*";
+          color: $theme-color;
+          display: inline;
+        }
+      }
+    }
+    .input-container{
+      display:inline-block;
+      vertical-align: top;
+      @at-root{
+        .desc{
+          font-size: 12px;
+          color: $light-text-color;
+          margin-left: 5px;
+        }
+      }
+      .desc{
+          @extend .desc;
+      }
+    }
+  }
+  .line{
+    height: 1px;
+    background: $border-color;
+    margin: 20px -40px;
+  }
+}
+
