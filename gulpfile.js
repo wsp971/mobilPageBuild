@@ -8,6 +8,8 @@ var gulpSequence = require("gulp-sequence");        /*保证依赖任务顺序�
 var git = require("gulp-git");                      /*git 提交文件*/
 var connect = require("gulp-connect");              /*web静态服务器*/
 var importOnce = require('node-sass-import-once');     /*sass编译,解决sass import 重复引入的问题*/
+var base64 = require("gulp-base64");
+
 
 
 
@@ -43,6 +45,16 @@ gulp.task("uglifycss" ,["sass","imagehash"],function(){
     .pipe(rev.manifest())                               /*生成hash 的 manifest*/
     .pipe(gulp.dest("./rev/css"))                       /*存放到./ref/css下面*/
     
+});
+
+// 小于20k 的图片被替换成base64
+gulp.task("image-base64",function(){
+	return gulp.src("./css/rev/**/*.css")
+	.pipe(base64({
+		extensions: ['png'],
+		maxImageSize: 20 * 1024
+	}))
+	.pipe(gulp.dest("./css/rev"));
 });
 
 
