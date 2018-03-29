@@ -7,12 +7,23 @@ var clean = require("gulp-clean");                  /*清空某个文件或者�
 var gulpSequence = require("gulp-sequence");        /*保证依赖任务顺序执行*/
 var git = require("gulp-git");                  /*git 提交文件*/
 var connect = require("gulp-connect");          /*web静态服务器*/
+var importOnce = require('node-sass-import-once');     /*sass编译,解决sass import 重复引入的问题*/
+
 
 
 //编译sass
 gulp.task("sass",function(){
     console.log("task sass start...");
-    return gulp.src("./sass/**/*.scss").pipe(sass().on('error',sass.logError)).pipe(gulp.dest("./css"));
+    return gulp.src("./sass/**/*.scss").pipe(sass(
+        {
+	        importer: importOnce,
+            importOnce: {
+                    index: false,
+                    css: false,
+                    bower: false
+                }
+        }
+    ).on('error',sass.logError)).pipe(gulp.dest("./css"));
 });
 
 //压缩及生成hash版本
@@ -100,7 +111,9 @@ gulp.task("git-push", function(){
     })
 });
 
-gulp.task("git",gulpSequence('init',"add","git-commit","git-push"));
+
+gulp.task("git",gulpSequence('init',"git-pull","add","git-commit","git-push"));
+
 
 
 /*gulp 静态服务器*/
@@ -110,6 +123,8 @@ gulp.task("server", function(){
         livereload: true
     })
 });
+
+
 
 /*gulp reload*/
 gulp.task("reload", function(){

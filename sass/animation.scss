@@ -1,17 +1,25 @@
-@keyframes huangdong {
-    25%{
-        transform: translateX(-10px);
-    }
-    75%{
-        transform: translateX(10px);
-    }
-}
+
+
+/*实现一个左右晃动的效果*/
 .yaohuang{
     animation: huangdong 1s infinite linear;
     width: 100px;
     height: 30px;
     background: #ccc;
+    @at-root {
+        @keyframes huangdong {
+            25%{
+                transform: translate(-10px);
+            }
+            75%{
+                transform: translate(10px);
+            }
+        }
+    }
 }
+
+
+
 
 .appcontainer{
     width: 375px;

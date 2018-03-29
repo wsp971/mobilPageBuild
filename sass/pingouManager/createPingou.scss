@@ -17,6 +17,7 @@ body{
    background: $white;
    border-top: 2px solid $border-header;
    line-height: 70px;
+   height: 73px;
    box-shadow: 0 3px 5px  #ccc ;
    .container{
       box-sizing: border-box;
@@ -24,10 +25,17 @@ body{
       margin: auto;
       .logo{
           font-size: 24px;
+          cursor: pointer;
           color: $theme-color;
           display: inline-block;
           float: left;
           .subtitle{
+              &::before{
+                  content:"";
+                  font-size:0;
+                  border-left: 1px solid #666666;
+                  padding: 15px 4px 0 ;
+              }
               font-size: 16px;
               color: #666666;
           }
@@ -54,6 +62,16 @@ body{
       }
       @include clearfix;
    }
+   &.fix{
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    top:0;
+    left:0;
+    & + .content{
+       margin-top: 107px;
+    }
+  }
 }
 .content{
   width: $page-width;
