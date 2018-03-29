@@ -1,12 +1,12 @@
-var gulp = require("gulp");
+var gulp = require("gulp");                         /*gulp*/
 var sass = require("gulp-sass");                    /*sass 编译*/
 var uglifycss = require("gulp-uglifycss");          /*压缩css*/
 var rev = require("gulp-rev");                      /*生成文件hash及对应的rev-manifest.json文件，里面存储这个文件及hash文件的对应关系*/
 var revCollector = require("gulp-rev-collector");   /*替换页面中的hash文件*/
 var clean = require("gulp-clean");                  /*清空某个文件或者文件夹*/
 var gulpSequence = require("gulp-sequence");        /*保证依赖任务顺序执行*/
-var git = require("gulp-git");                  /*git 提交文件*/
-var connect = require("gulp-connect");          /*web静态服务器*/
+var git = require("gulp-git");                      /*git 提交文件*/
+var connect = require("gulp-connect");              /*web静态服务器*/
 var importOnce = require('node-sass-import-once');     /*sass编译,解决sass import 重复引入的问题*/
 
 
@@ -27,7 +27,7 @@ gulp.task("sass",function(){
 });
 
 
-
+//给图片生成hash
 gulp.task("imagehash",function(){
 	console.log("imagehash");
 	return gulp.src("./images/**.png").pipe(rev()).pipe(gulp.dest("./images/rev/")).pipe(rev.manifest()).pipe(gulp.dest("./rev/image"));
@@ -46,6 +46,7 @@ gulp.task("uglifycss" ,["sass","imagehash"],function(){
 });
 
 
+//发布css,替换css 中的图片hash
 gulp.task("releasecss", ["uglifycss"],function(){
 	return gulp.src(['./rev/image/*.json',"./css/rev/**/*.css"])
 	.pipe(revCollector(
@@ -76,12 +77,12 @@ gulp.task("releasehtml",function(){
 
 
 
-
 //清空css hash文件
 gulp.task("clean-css", function(){
     console.log("task clean-css start...");
    return  gulp.src("./css/rev/",{read: false}).pipe(clean());
 });
+
 
 //清空 image  hash文件
 gulp.task("clean-image", function(){
@@ -99,15 +100,13 @@ gulp.task("clean-html",function(){
 	return gulp.src("./html/rev/",{read: false}).pipe(clean());
 });
 
-
+//清空所有 非源文件
 gulp.task("clean", gulpSequence("clean-css",'clean-image','clean-html','clean-rev-mainifest'));
 
 
 
 //发布生成的html
 gulp.task("build",gulpSequence("clean","releasecss","releasehtml"));
-
-
 
 
 
@@ -140,12 +139,14 @@ gulp.task("git-pull", function(){
 });
 
 
-gulp.task("add", function(){
-    return gulp.src(["./*","!node_modules"]).pipe(git.add());
+
+gulp.task("git-add", function(){
+    return gulp.src(["./*", "!(./node_modules/|./css/rev|./html/rev|./images/rev|./rev)"]).pipe(git.add());
 });
 
 gulp.task("git-commit", function(){
-    gulp.src(["./*","!node_modules"]).pipe(git.commit("gulp-commit" + new Date(),{args: '-m gulp-task'}));
+    gulp.src(["./*", "!node_modules","!css/rev","!html/rev","!images/rev","!rev"])
+    .pipe(git.commit("gulp-commit" + new Date(),{args: '-m gulp-task'}));
 
 });
 
@@ -158,9 +159,7 @@ gulp.task("git-push", function(){
 });
 
 
-gulp.task("git",gulpSequence("add","git-commit","git-push"));
-
-
+gulp.task("git",gulpSequence("git-add","git-commit","git-push"));
 
 
 
