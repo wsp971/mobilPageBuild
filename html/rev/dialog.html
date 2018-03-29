@@ -6,61 +6,187 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>dialog</title>
+    <style>
+        body{
+            background: #ccc;
+        }
+    </style>
     <link rel="stylesheet" href="../../css/pingouManager/dialog.css">
 </head>
 <body>
-<div class="mencen"></div>
-<div class="dialog hide">
-    <div class="header">
+<div class=" mask hide"></div>
+<div class="dialog ">
+    <div class="dialog-header">
         高级设置
     </div>
-    <div class="content ">
-        <p>asdfjaskfjsladfjasdjfasdfjasdfjasdjfk</p>
-        <p>asdfjaskfjsladfjasdjfasdfjasdfjasdjfk</p>
-        <p>asdfjaskfjsladfjasdjfasdfjasdfjasdjfk</p>
-        <p>asdfjaskfjsladfjasdjfasdfjasdfjasdjfk</p>
-        <p>asdfjaskfjsladfjasdjfasdfjasdfjasdjfk</p>
-        <p>asdfjaskfjsladfjasdjfasdfjasdfjasdjfk</p>
-        <p>asdfjaskfjsladfjasdjfasdfjasdfjasdjfk</p>
-        <p>asdfjaskfjsladfjasdjfasdfjasdfjasdjfk</p>
-        <p>asdfjaskfjsladfjasdjfasdfjasdfjasdjfk</p>
-        <p>asdfjaskfjsladfjasdjfasdfjasdfjasdjfk</p>
-        
+    <div class="dialog-content ">
+        <div class="form">
+            <div class="form-control">
+                <label for="" class="format">拼购活动类型:</label>
+                <div class="input-container">
+                    <input type="radio">普通拼购
+                    <input type="radio">类目新人团
+                    <input type="radio">平台新人团
+                </div>
+                <p class="desc">说明：新人团是指该拼购活动仅限新人开团或参团，每位限购一件</p>
+            </div>
+            <div class="form-control">
+                <label for="">购买限制:</label>
+                <div class="input-container">
+                    <input type="radio">每人限购一件
+                </div>
+            </div>
+            <div class="form-control">
+                <label for="">售卖数量:</label>
+                <input type="text" placeholder="填写1-1000000之间的整数">件
+                <p class="desc">说明：此高级设置仅在即将生成的拼购活动商品中有效</p>
+            </div>
+        </div>
     </div>
-    <div class="footer"></div>
+    <div class="dialog-footer">
+        <div class="button-group">
+            <a href="javascript:;" class="button button-normal  button-small">确定</a>
+            <a href="javascript:;" class="button button-grey button-small">取消</a>
+        </div>
+    </div>
 </div>
-<div class="alert hide">
+<div class="alert ">
     <span class="icon icon-warn"></span>
-    <div class="content">
+    <div class="alert-content">
         截止到昨晚，该拼购活动未产生有效订单
     </div>
 </div>
-<div class="alert hide">
+<div class="alert ">
     <span class="icon icon-success"></span>
-    <div class="content">
+    <div class="alert-content">
         提交成功！可在 <span class="sign">已创建的拼购活动</span>查看
     </div>
     <div class="button-group">
         <button class="button button-normal button-small">确认</button>
     </div>
 </div>
-<div class="toast hide">
-    <span class="content">
+<div class="toast ">
+    <span class="alert-content">
     <i class="icon icon-success"></i>复制成功
     </span>
 </div>
-<div class="toast hide">
-    <span class="content">
+<div class="toast ">
+    <span class="toast-content">
     <i class="icon icon-warn"></i>请勾选对应活动
     </span>
 </div>
 <div class="alert ">
-    <div class="content">
+    <div class="alert-content">
         是否确认提交？
     </div>
     <div class="button-group">
         <button class="button button-normal button-small">确认</button>
         <button class="button button-grey button-small">取消</button>
+    </div>
+</div>
+<div class="dialog large ">
+    <div class="dialog-header">
+        重新选择主推商品
+    </div>
+    <div class="dialog-content ">
+        <div class="product-container">
+            <div class="product">
+                <input type="radio">
+                <img src="" alt="" class="product-img">
+                <div class="product-info">
+                    <p class="product-info-name">三星 Galaxy S7 edge（G9350）32G版 铂光金移动联通电信4G手机 双卡双待 骁龙820手机</p>
+                    <p class="product-info-desc">SKU编号:456464545465</p>
+                 
+                </div>
+            </div>
+            <div class="product">
+                <input type="radio">
+                <img src="" alt="" class="product-img">
+                <div class="product-info">
+                    <p class="product-info-name">三星 Galaxy S7 edge（G9350）32G版 铂光金移动联通电信4G手机 双卡双待 骁龙820手机</p>
+                    <p class="product-info-desc">SKU编号:456464545465</p>
+        
+                </div>
+            </div>
+            <div class="product">
+                <input type="radio">
+                <img src="" alt="" class="product-img">
+                <div class="product-info">
+                    <p class="product-info-name">三星 Galaxy S7 edge（G9350）32G版 铂光金移动联通电信4G手机 双卡双待 骁龙820手机</p>
+                    <p class="product-info-desc">SKU编号:456464545465</p>
+        
+                </div>
+            </div>
+            <div class="product">
+                <input type="radio">
+                <img src="" alt="" class="product-img">
+                <div class="product-info">
+                    <p class="product-info-name">三星 Galaxy S7 edge（G9350）32G版 铂光金移动联通电信4G手机 双卡双待 骁龙820手机</p>
+                    <p class="product-info-desc">SKU编号:456464545465</p>
+        
+                </div>
+            </div>
+            <div class="product">
+                <input type="radio">
+                <img src="" alt="" class="product-img">
+                <div class="product-info">
+                    <p class="product-info-name">三星 Galaxy S7 edge（G9350）32G版 铂光金移动联通电信4G手机 双卡双待 骁龙820手机</p>
+                    <p class="product-info-desc">SKU编号:456464545465</p>
+        
+                </div>
+            </div>
+            <div class="product">
+                <input type="radio">
+                <img src="" alt="" class="product-img">
+                <div class="product-info">
+                    <p class="product-info-name">三星 Galaxy S7 edge（G9350）32G版 铂光金移动联通电信4G手机 双卡双待 骁龙820手机</p>
+                    <p class="product-info-desc">SKU编号:456464545465</p>
+        
+                </div>
+            </div>
+            <div class="product">
+                <input type="radio">
+                <img src="" alt="" class="product-img">
+                <div class="product-info">
+                    <p class="product-info-name">三星 Galaxy S7 edge（G9350）32G版 铂光金移动联通电信4G手机 双卡双待 骁龙820手机</p>
+                    <p class="product-info-desc">SKU编号:456464545465</p>
+        
+                </div>
+            </div>
+            <div class="product">
+                <input type="radio">
+                <img src="" alt="" class="product-img">
+                <div class="product-info">
+                    <p class="product-info-name">三星 Galaxy S7 edge（G9350）32G版 铂光金移动联通电信4G手机 双卡双待 骁龙820手机</p>
+                    <p class="product-info-desc">SKU编号:456464545465</p>
+        
+                </div>
+            </div>
+            <div class="product">
+                <input type="radio">
+                <img src="" alt="" class="product-img">
+                <div class="product-info">
+                    <p class="product-info-name">三星 Galaxy S7 edge（G9350）32G版 铂光金移动联通电信4G手机 双卡双待 骁龙820手机</p>
+                    <p class="product-info-desc">SKU编号:456464545465</p>
+        
+                </div>
+            </div>
+            <div class="product">
+                <input type="radio">
+                <img src="" alt="" class="product-img">
+                <div class="product-info">
+                    <p class="product-info-name">三星 Galaxy S7 edge（G9350）32G版 铂光金移动联通电信4G手机 双卡双待 骁龙820手机</p>
+                    <p class="product-info-desc">SKU编号:456464545465</p>
+        
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dialog-footer">
+        <div class="button-group">
+            <a href="javascript:;" class="button button-normal  button-small">确定</a>
+            <a href="javascript:;" class="button button-grey button-small">取消</a>
+        </div>
     </div>
 </div>
 

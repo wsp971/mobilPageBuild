@@ -15,10 +15,34 @@ gulp.task("sass",function(){
     return gulp.src("./sass/**/*.scss").pipe(sass().on('error',sass.logError)).pipe(gulp.dest("./css"));
 });
 
+
 //压缩及生成hash版本
-gulp.task("uglifycss" ,["sass"],function(){
+gulp.task("uglifycss" ,["sass","imagehash"],function(){
     console.log("task uglifycss start...");
-    return  gulp.src("./css/*.css").pipe(uglifycss({uglyComments:true})).pipe(rev()).pipe(gulp.dest("./css/rev/")).pipe(rev.manifest()).pipe(gulp.dest("./rev"));
+    return  gulp.src("./css/**/*.css").pipe(uglifycss({uglyComments:true})).pipe(rev()).pipe(gulp.dest("./css/rev/")).pipe(rev.manifest()).
+    pipe(revCollector({
+        dirReplacements:{
+		    "images": "../images/rev"
+	    }
+    })).pipe(gulp.dest("./rev/css/"));
+});
+
+gulp.task("buildcss", ["uglifycss"],function(){
+	
+	return gulp.src(['./rev/image/*.json',"./css/rev/**/*.css"]).pipe(revCollector(
+		{
+			dirReplacements:{
+				"css": "css/rev",
+				"images": "../images/rev"
+			}
+		}
+	)).pipe(gulp.dest("./html/rev/"));
+})
+
+
+gulp.task("imagehash",function(){
+    console.log("imagehash");
+    return gulp.src("./images/**.png").pipe(rev()).pipe(gulp.dest("./images/rev/")).pipe(rev.manifest()).pipe(gulp.dest("./rev/image"));
 });
 
 //清空css hash文件
@@ -27,19 +51,33 @@ gulp.task("clean-css", function(){
    return  gulp.src("./css/rev/",{read: false}).pipe(clean());
 });
 
+gulp.task("clean-image", function(){
+    return gulp.src("./images/rev/",{read: false}).pipe(clean());
+});
+
+gulp.task("clean-rev-mainifest", function(){
+    return gulp.src("./rev/",{read: false}).pipe(clean());
+});
+
+gulp.task("clean", gulpSequence("clean-css",'clean-image','clean-html','clean-rev-manifest'));
+
+
+
 //清空发布文件
 gulp.task("clean-html",function(){
    console.log("task clean-html start ...");
    return gulp.src("./html/rev/",{read: false}).pipe(clean());
 });
 
+
 //发布、及发布最后生成的html到html/rev 文件夹下
 gulp.task("release",function(){
    console.log("task rev start ...");
-   return gulp.src(['./rev/*.json',"./html/src/*.html"]).pipe(revCollector(
+   return gulp.src(['./rev/*.json',"./html/src/**/*.html", "./css/rev/**/*.css"]).pipe(revCollector(
        {
            dirReplacements:{
-               "css": "css/rev"
+               "css": "css/rev",
+               "images": "../images/rev"
            }
        }
    )).pipe(gulp.dest("./html/rev/"));
@@ -77,11 +115,6 @@ gulp.task("git-pull", function(){
     })
 });
 
-// gulp.task('init', function () {
-//     git.init(function (err) {
-//         if (err) throw err;
-//     });
-// });
 
 gulp.task("add", function(){
     return gulp.src(["./*","!node_modules"]).pipe(git.add());
