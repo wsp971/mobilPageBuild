@@ -84,7 +84,7 @@ gulp.task("git-pull", function(){
 // });
 
 gulp.task("add", function(){
-    return gulp.src("./css/*").pipe(git.add());
+    return gulp.src(["./*","!node_modules"]).pipe(git.add());
 });
 
 gulp.task("git-commit", function(){
