@@ -88,7 +88,7 @@ gulp.task("add", function(){
 });
 
 gulp.task("git-commit", function(){
-    gulp.src("./*").pipe(git.commit("gulp-commit" + new Date(),{args: '-m user: wangshiping'}));
+    gulp.src("./*").pipe(git.commit("gulp-commit" + new Date(),{args: '-m afjakdf'}));
 
 });
 
