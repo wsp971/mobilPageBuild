@@ -1,0 +1,73 @@
+@import "../public/practice";
+@import "../public/reset";
+
+.boxes{
+  overflow: hidden;
+
+  .box1,.box2,.box3,.box4{
+  		float: left;
+		width: 100px;
+		padding-bottom: 99999px;
+		margin-bottom: -99999px;
+
+  }
+  .box1{
+	 background: red;
+  }
+  .box2{
+		background: green;
+  }
+  .box3{
+		background: blue;
+  }
+  .box4{
+		background: orange;
+  }
+
+}
+
+.boxes2{
+  display: table-row;
+  .box{
+	display: table-cell;
+	width: 30%;
+	margin-bottom: -100px;
+	background: #eeeeee;
+	border: 1px solid #ccc;
+	&:nth-child(2n){
+	  background: orange;
+	}
+  }
+
+}
+
+.parent{
+  width: 400px;
+  height: 200px;
+  border: 1px solid #ccc;
+  position: relative;
+  .son{
+	width: 180px;
+	height: 100px;
+	background: orange;
+	&.left{
+	  margin-right: auto;
+	}
+	&.right{
+	  margin-left: auto;
+	}
+	&.center{
+	  	margin: auto;
+	}
+	&.middle{
+	  position: absolute;
+	  left:0;
+	  right:0;
+	  top:0;
+	  bottom: 0;
+	  margin: auto;
+
+	}
+  }
+
+}

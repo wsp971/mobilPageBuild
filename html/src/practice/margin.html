@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../css/practice/margin.css">
+
+</head>
+<body>
+<div class="wrapper">
+    <p class="doc">本篇用来练习margin</p>
+    <p class="doc"> 用 margin 来实现 两列等高布局、甚至是多列等高布局</p>
+
+    <div class="boxes">
+        <div class="box1">
+            adsfjasdkfja;sdf
+            asdfakfasf
+        </div>
+        <div class="box2">
+            safasdfa
+        </div>
+        <div class="box3">
+            asdfasfadfa
+            asdfasfadfa
+            asdfasfadfa
+            asdfasfadfa
+            asdfasfadfa
+        </div>
+        <div class="box4">
+            <a href="javascript:;" onclick="grow()">点我长高</a><br>
+            <a href="javascript:;" onclick="reset()">点我还原</a>
+        </div>
+    </div>
+
+
+    <p class="doc">用 table-cell 来实现等高布局</p>
+
+
+    <div class="boxes2">
+        <div class="box">
+            adsfafasf
+        </div>
+        <div class="box">
+            adsfadfa
+        </div>
+        <div class="box">
+            asdfafasdfasdfad
+        </div>
+        <div class="box">
+            dsfasdfafaf
+            dsfasdfafaf
+            dsfasdfafaf
+            dsfasdfafaf
+            dsfasdfafaf
+        </div>
+
+    </div>
+
+    <div class="doc"> margin: auto 的妙用：</div>
+    <p class="doc">用来给块状盒子左右对齐，不用float</p>
+
+    <div class="parent">
+        <div class="son">
+            靠左侧盒子。默认的。
+            margin-right:auto;
+        </div>
+
+    </div>
+    <div class="parent">
+        <div class="son right">
+            靠右侧盒子。
+            margin-left: auto;
+        </div>
+    </div>
+    <div class="parent">
+        <div class="son center">
+            水平居中的盒子
+            margin:auto;
+        </div>
+    </div>
+    <div class="parent">
+        <div class="son middle">
+            垂直居中的盒子
+            margin: auto;
+            position:absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+        </div>
+    </div>
+
+
+
+
+
+
+</div>
+
+<div class="wrapper">
+    <div class="doc">sadjfajfka</div>
+</div>
+
+<script>
+    function grow(){
+    	var box4 = document.querySelector(".box4");
+    	box4.style.height="500px";
+
+    }
+    function reset(){
+    	var box4 = document.getElementsByClassName("box4")[0];
+    	box4.style.height="";
+    }
+
+</script>
+
+
+</body>
+</html>

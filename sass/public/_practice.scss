@@ -1,0 +1,23 @@
+.wrapper{
+  width: 800px;
+  border: 1px solid #ccc;
+  background: #ffffff;
+  overflow: hidden;
+  padding: 10px;
+  margin: 10px  auto;
+  min-height: 200px;
+}
+
+body{
+  background: #fafafa;
+}
+
+.doc{
+  color: red;
+  text-align: center;
+  &::before, &::after{
+	 content:"----------";
+  }
+  margin: 10px 0;
+}
+

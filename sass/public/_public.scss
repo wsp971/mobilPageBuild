@@ -48,20 +48,24 @@ $imgPath : '../images';
   background-repeat: no-repeat;
   display: block;
 }
+
 @mixin height($n){
   height: rem($n);
   line-height: rem($n);
 }
+
 @mixin centerWidth($w: 710px){
   width: rem($w);
   margin: 0 auto;
 }
+
 @mixin pCenter(){
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate3d(-50%, -50%, 0);
 }
+
 .hidden{
   width: 0;
   height: 0;
@@ -69,6 +73,7 @@ $imgPath : '../images';
   line-height: 0;
   text-indent: rem(-9999px);
 }
+
 .wrapper{
   width: rem(750);  // 计算方式  750/40 ＝ 18.75rem
   height: auto;//如果没有高度限制，使用auto

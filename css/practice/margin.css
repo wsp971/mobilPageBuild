@@ -1,0 +1,101 @@
+@charset "UTF-8";
+.wrapper {
+  width: 800px;
+  border: 1px solid #ccc;
+  background: #ffffff;
+  overflow: hidden;
+  padding: 10px;
+  margin: 10px  auto;
+  min-height: 200px; }
+
+body {
+  background: #fafafa; }
+
+.doc {
+  color: red;
+  text-align: center;
+  margin: 10px 0; }
+  .doc::before, .doc::after {
+    content: "----------"; }
+
+/* 重置样式 */
+* {
+  -webkit-tap-highlight-color: transparent;
+  outline: 0; }
+
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline; }
+
+img {
+  border: 0 none;
+  vertical-align: top; }
+
+i, em {
+  font-style: normal; }
+
+ol, ul {
+  list-style: none; }
+
+input, select, button, h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-family: inherit; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+a {
+  text-decoration: none;
+  color: #666; }
+
+.boxes {
+  overflow: hidden; }
+  .boxes .box1, .boxes .box2, .boxes .box3, .boxes .box4 {
+    float: left;
+    width: 100px;
+    padding-bottom: 99999px;
+    margin-bottom: -99999px; }
+  .boxes .box1 {
+    background: red; }
+  .boxes .box2 {
+    background: green; }
+  .boxes .box3 {
+    background: blue; }
+  .boxes .box4 {
+    background: orange; }
+
+.boxes2 {
+  display: table-row; }
+  .boxes2 .box {
+    display: table-cell;
+    width: 30%;
+    margin-bottom: -100px;
+    background: #eeeeee;
+    border: 1px solid #ccc; }
+    .boxes2 .box:nth-child(2n) {
+      background: orange; }
+
+.parent {
+  width: 400px;
+  height: 200px;
+  border: 1px solid #ccc;
+  position: relative; }
+  .parent .son {
+    width: 180px;
+    height: 100px;
+    background: orange; }
+    .parent .son.left {
+      margin-right: auto; }
+    .parent .son.right {
+      margin-left: auto; }
+    .parent .son.center {
+      margin: auto; }
+    .parent .son.middle {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto; }
