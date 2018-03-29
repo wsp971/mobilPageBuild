@@ -1269,3 +1269,6 @@ body {
     .table tbody tr td {
       border: 1px solid #d7dde4;
       vertical-align: middle; }
+
+.test {
+  margin: 10px; }
