@@ -141,7 +141,7 @@ gulp.task("git-pull", function(){
 
 
 gulp.task("git-add", function(){
-    return gulp.src(["./*", "!(./node_modules/|./css/rev|./html/rev|./images/rev|./rev)"]).pipe(git.add());
+    return gulp.src(["./*", "!node_modules","!css/rev","!html/rev","!images/rev","!rev"]).pipe(git.add());
 });
 
 gulp.task("git-commit", function(){
