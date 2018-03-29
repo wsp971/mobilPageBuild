@@ -77,18 +77,18 @@ gulp.task("git-pull", function(){
     })
 });
 
-gulp.task('init', function () {
-    git.init(function (err) {
-        if (err) throw err;
-    });
-});
+// gulp.task('init', function () {
+//     git.init(function (err) {
+//         if (err) throw err;
+//     });
+// });
 
 gulp.task("add", function(){
     return gulp.src("./css/*").pipe(git.add());
 });
 
 gulp.task("git-commit", function(){
-    gulp.src("./*").pipe(git.commit("gulp-commit" + new Date(),{args: '-m afjakdf'}));
+    gulp.src(["./*","!node_modules"]).pipe(git.commit("gulp-commit" + new Date(),{args: '-m gulp-task'}));
 
 });
 
@@ -100,7 +100,7 @@ gulp.task("git-push", function(){
     })
 });
 
-gulp.task("git",gulpSequence('init',"add","git-commit","git-push"));
+gulp.task("git",gulpSequence("add","git-commit","git-push"));
 
 
 /*gulp 静态服务器*/
