@@ -1,0 +1,54 @@
+
+$bgcolor: #ccc;
+
+
+%icon{
+	display: inline-block;
+  	background: $bgcolor;
+  	width: 40px;
+  	height: 40px;
+}
+
+//实心圆
+.dot{
+  @extend %icon;
+  border-radius: 50%;
+  background: $bgcolor;
+
+}
+
+//圆环
+.loop{
+  @extend %icon;
+  padding: 20px;
+  background-clip: content-box;
+  border-width: 20px;
+  border-color: $bgcolor;
+  border-style: solid;
+  border-radius: 60px;
+  &.min{
+	transform: scale(.5,.5);
+  }
+  &.minium{
+	transform: scale(.2);
+  }
+}
+
+
+//三道杠
+
+.menu{
+  @extend %icon;
+  padding: 10px 0;
+  height: 10px;
+  width: 50px;
+  background-clip: content-box;
+  border-width: 10px;
+  border-style: solid;
+  border-color: $bgcolor;
+  border:{
+	left: none;
+	right: none;
+  }
+}
+

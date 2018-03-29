@@ -1,0 +1,32 @@
+.dot, .loop, .menu {
+  display: inline-block;
+  background: #ccc;
+  width: 40px;
+  height: 40px; }
+
+.dot {
+  border-radius: 50%;
+  background: #ccc; }
+
+.loop {
+  padding: 20px;
+  background-clip: content-box;
+  border-width: 20px;
+  border-color: #ccc;
+  border-style: solid;
+  border-radius: 60px; }
+  .loop.min {
+    transform: scale(0.5, 0.5); }
+  .loop.minium {
+    transform: scale(0.2); }
+
+.menu {
+  padding: 10px 0;
+  height: 10px;
+  width: 50px;
+  background-clip: content-box;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #ccc;
+  border-left: none;
+  border-right: none; }
