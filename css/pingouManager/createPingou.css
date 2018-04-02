@@ -124,7 +124,7 @@ a {
     background-size: 17px 16px; }
 
 .page-container {
-  font-size: 12px;
+  font-size: 0;
   margin-top: 20px;
   color: #657180; }
   .page-container::after {
@@ -133,6 +133,7 @@ a {
     display: block; }
 
 .page-item {
+  font-size: 14px;
   width: 30px;
   height: 30px;
   padding: 5px;
@@ -140,7 +141,8 @@ a {
   display: inline-block;
   text-align: center;
   border: 1px solid #d7dde4;
-  cursor: pointer; }
+  cursor: pointer;
+  -webkit-user-select: none; }
   .page-item:hover {
     border-color: #ff3333; }
   .page-item.active {

@@ -86,11 +86,12 @@ $button-small-width: 74px;
 
   &-container{
     @include clearfix;
-    font-size: 12px;
+    font-size: 0;
     margin-top: 20px;
     color:$input-text-color;
   }
   &-item{
+    font-size: 14px;
     width: 30px;
     height:30px;
     padding: 5px;
@@ -99,6 +100,7 @@ $button-small-width: 74px;
     text-align: center;
     border: 1px solid $border-color;
     cursor: pointer;
+    -webkit-user-select: none;
     &:hover{
       border-color: $theme-color;
     }

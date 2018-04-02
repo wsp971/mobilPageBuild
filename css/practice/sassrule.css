@@ -11,6 +11,9 @@
   border: 1px solid #eeeeee; }
 
 /*导入片段*/
+.nexttest .shareTEST {
+  margin: auto; }
+
 /*混合器*/
 .notice {
   background: #cccccc;
