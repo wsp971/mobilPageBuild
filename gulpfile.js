@@ -92,7 +92,7 @@ gulp.task("releasehtml",function(){
 //清空css hash文件
 gulp.task("clean-css", function(){
     console.log("task clean-css start...");
-   return  gulp.src("./css/rev/",{read: false}).pipe(clean());
+   return  gulp.src("./css/",{read: false}).pipe(clean());
 });
 
 

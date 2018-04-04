@@ -1,3 +1,5 @@
+@import "../public/practice";
+
 
 $bgcolor: #ccc;
 
@@ -53,3 +55,65 @@ $bgcolor: #ccc;
   }
 }
 
+//三道杠杠  ，用border 实现
+
+.menu2{
+  @extend %icon;
+  background: #fff;
+  width: 60px;
+  height: 10px;
+  border:{
+	top: 10px solid $bgcolor;
+	bottom: 30px double $bgcolor;
+  }
+}
+
+/** 三角的实现*/
+
+@mixin triangle ($direction: top , $border-width: 20px ){
+  border:$border-width solid transparent;
+  width:0;
+  height:0;
+  display: inline-block;
+  @if($direction == top){
+	border:{
+	  	bottom: {
+		  color: $bgcolor;
+		}
+	}
+  }@else if($direction == left){
+	border: {
+	  	right:{
+		  color: $bgcolor;
+		}
+	}
+  }@else if($direction == right){
+	border:{
+	  	left:{
+		  	color: $bgcolor;
+		}
+	}
+  }@else if($direction == bottom){
+	border:{
+	  	top:{
+		  	color: $bgcolor;
+		}
+	}
+  }
+
+}
+
+.triangle{
+  &-top{
+	@include triangle(top);
+  }
+  &-bottom{
+	@include triangle(bottom);
+  }
+  &-left{
+	@include triangle(left);
+  }
+  &-right{
+	@include triangle(right);
+  }
+}
