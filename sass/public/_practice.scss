@@ -21,3 +21,18 @@ body{
   margin: 10px 0;
 }
 
+.desc{
+  background: #f1f1f1;
+  margin: 10px 0;
+  padding: 5px;
+  line-height: 16px;
+  font-size: 14px;
+  color: #3399ff;
+  font-weight: bolder;
+  &:before{
+      content:"注：";
+      font-size: 25px;
+      color: red;
+
+  }
+}
