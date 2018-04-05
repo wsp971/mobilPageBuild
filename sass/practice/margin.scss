@@ -1,5 +1,6 @@
 @import "../public/practice";
 @import "../public/reset";
+@import "../public/color";
 
 .boxes{
   overflow: hidden;
@@ -69,5 +70,45 @@
 
 	}
   }
+}
 
+
+/*实现内容垂直居中 用line-height 实现*/
+.box5{
+  line-height: 100px;
+  background: orange;
+  width: 80%;
+  margin: auto;
+  .content{
+	margin: 0 20px;
+	line-height: 16px;
+	border: 1px solid #ccc;
+	display: inline-block;
+	vertical-align: middle;
+
+  }
+}
+
+
+/*verticle-align 与line-height 相关*/
+
+.box6{
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: orange;
+  //overflow: hidden;
+}
+
+
+.box7{
+  line-height: 0;
+  font-size: 14px;
+  background: orange;
+}
+
+.box8{
+  line-height: 14px;
+  font-size:0;
+  background: orange;
 }

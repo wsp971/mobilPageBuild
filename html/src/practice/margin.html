@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="wrapper">
-    <p class="doc">本篇用来练习margin</p>
+    <p class="doc">本篇用来练习margin padding border 等css3 一下的css内容</p>
     <p class="doc"> 用 margin 来实现 两列等高布局、甚至是多列等高布局</p>
 
     <div class="boxes">
@@ -101,9 +101,39 @@
 </div>
 
 <div class="wrapper">
-    <div class="doc">sadjfajfka</div>
+    <div class="doc">垂直居中</div>
+    <div class="box5">
+        <div class="content">
+           line-height 的高度决定了 height 高度
+            content display 为 inline-block;
+            verticle-align: middle;
+        </div>
+    </div>
+
 </div>
 
+
+<div class="wrapper">
+    <div class="doc">line-height 与  verticle-align </div>
+    <div class="doc">一个inline-block元素，如果里面没有inline内联元素，或者overflow不是visible，则该元素的基线就是其margin底边缘，否则，其基线就是元素里面最后一行内联元素的基线。</div>
+    <div class="box6"></div>
+    <div class="box6">h</div>
+    <div class="box6">哈哈，你看我不对齐了</div>
+
+
+
+</div>
+
+<div class="wrapper">
+    <p class="doc">inline-height</p>
+    <p class="doc">内联元素的高度是有其 line-height 撑起的</p>
+    <div class="box7">
+        line-height 为0
+    </div>
+    <div class="box8">
+        font-size 为0；
+    </div>
+</div>
 <script>
     function grow(){
     	var box4 = document.querySelector(".box4");

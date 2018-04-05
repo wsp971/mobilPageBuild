@@ -1,4 +1,5 @@
 @import "../public/practice";
+@import "../public/color";
 
 /*实现一个左右晃动的效果*/
 .yaohuang{
@@ -17,6 +18,85 @@
         }
     }
 }
+
+/*实现加载效果1*/
+
+.loading1{
+    text-align: center;
+    div{
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background: $grey;
+        border-radius: 20px;
+        animation: loading1 1.4s infinite  ease-in-out ;
+        &.one{
+            animation-delay: -.32s;
+        }
+        &.two{
+            animation-delay: -.16s;
+        }
+        &.three{
+            animation-delay: 0s;
+        }
+        @at-root {
+            @keyframes loading1 {
+                0%,80%,100%{
+                    transform: scale(0);
+                }
+                40%{
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+}
+
+.loading2{
+    text-align: center;
+    &:before{
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        border-radius: 40px;
+        content: "";
+        border: 2px solid $transparent;
+        border:{
+            left:{
+                color: $red;
+            }
+            top:{
+                color: $red;
+            }
+        }
+        animation: loading2 .8s infinite linear;
+    }
+    &.ease{
+        &:before{
+            animation-timing-function: ease;
+        }
+    }
+    &.ease-in-out{
+        &:before{
+            animation-timing-function: ease-in-out;
+        }
+    }
+    @at-root {
+        @keyframes loading2 {
+            0%{
+                transform: rotate(0);
+            }
+            100%{
+                transform: rotate(360deg);
+
+            }
+        }
+    }
+
+
+}
+
+
 
 
 .appcontainer{
