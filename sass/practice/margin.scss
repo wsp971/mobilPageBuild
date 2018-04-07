@@ -112,3 +112,43 @@
   font-size:0;
   background: orange;
 }
+
+.box9{
+  width: 200px;
+  border: 1px solid $grey;
+  text-align: center;
+  .content{
+	display: inline-block;
+	text-align: left;
+  }
+}
+
+.box10{
+  overflow: scroll;
+  width: 200px;
+  height: 100px;
+
+}
+
+/*自定义webkit 浏览器属性*/
+
+//血槽宽度和高度
+::-webkit-scrollbar{
+  width: 18px;
+  height: 18px;
+}
+
+//拖动条
+::-webkit-scrollbar-thumb{
+  background-color: red;
+  border-radius: 0;
+}
+//背景槽
+::-webkit-scrollbar-track{
+  background-color: #005c5c;
+  border-radius: 6px;
+}
+
+
+
+
