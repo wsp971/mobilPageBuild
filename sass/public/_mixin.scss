@@ -71,6 +71,14 @@
   overflow: hidden;
 }
 
+//多行
+@mixin ell_lines($num:2){
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $num;
+  overflow: hidden;
+}
+
 
 
 

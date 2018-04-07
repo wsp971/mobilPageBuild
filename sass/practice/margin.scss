@@ -164,6 +164,11 @@
 	@include ell_twoline;
 	background: olive;
   }
+  .line3{
+	width: 100px;
+	@include  ell_lines(3);
+	background: royalblue;
+  }
 
 }
 
