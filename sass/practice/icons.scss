@@ -1,4 +1,5 @@
 @import "../public/practice";
+@import "../public/color";
 
 
 $bgcolor: #ccc;
@@ -100,8 +101,10 @@ $bgcolor: #ccc;
 		}
 	}
   }
-
 }
+
+
+
 
 .triangle{
   &-top{
@@ -116,4 +119,61 @@ $bgcolor: #ccc;
   &-right{
 	@include triangle(right);
   }
+}
+
+@mixin r-trangle($width ,$height, $directive){
+	width:0;
+  	height:0;
+  	//border: 10px solid
+   border: $width $height solid transparent;
+  @if($width==top){
+	border:{
+	  bottom:{
+		color: $grey;
+	  }
+	  left:{
+		color: $grey;
+	  }
+	}
+  }
+  //@else if($width==right){
+	// border:{
+	//   bottom:{
+	//	 color:$grey;
+	//   }
+	//
+	// }
+	//
+	//
+  //}
+
+
+}
+
+.top-r-trangle{
+  @include r-trangle(10px, 20px ,top);
+}
+
+
+
+
+/*实现一个带直角的标签*/
+
+.label{
+  &:before{
+	content:"";
+	width:0;
+	height:0;
+	border: 10px solid transparent;
+	display: inline-block;
+	border:{
+	  top:{
+		color: $grey;
+	  }
+	  right:{
+		color: $grey;
+	  }
+	}
+  }
+  background: $grey;
 }
