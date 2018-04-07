@@ -55,7 +55,21 @@
   box-shadow: $shadow;
 }
 
+/*单行超出用省略号*/
 
+
+@mixin ell_oneline{
+  overflow:hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin ell_twoline{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
 
 
 

@@ -1,6 +1,7 @@
 @import "../public/practice";
 @import "../public/reset";
 @import "../public/color";
+@import "../public/mixin";
 
 .boxes{
   overflow: hidden;
@@ -150,5 +151,19 @@
 }
 
 
+.box11{
+  width: 180px;
+  height: 180px;
+  .line1{
+	width: 100px;
+	background: orange;
+	 @include ell_oneline;
+  }
+  .line2{
+	width:100px;
+	@include ell_twoline;
+	background: olive;
+  }
 
+}
 
