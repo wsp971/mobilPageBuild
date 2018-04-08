@@ -1,7 +1,7 @@
 @import "../public/practice";
 @import "../public/color";
 @import "../public/reset";
-
+@import "../public/mixin";
 /*实现一个左右晃动的效果*/
 .yaohuang{
     animation: huangdong 1s infinite linear;
@@ -100,7 +100,41 @@
 }
 
 
+/*气泡*/
+ul.qipao{
+    height: 24px;
+    line-height: 24px;
+    font-size: 16px;
+    list-style: none;
+    max-width: 150px;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    li.qipao{
+        background: rgba(0,0,0,.7);
+        border-radius: 24px;
+        animation: qipao 5s linear;
+        padding: 0 20px;
+        opacity: 0;
+        @include ell_oneline;
+        @at-root {
+            @keyframes qipao {
+                0%,100%{
+                    opacity: 0;
+                }
+                30%,70%{
+                    opacity: 1;
+                }
 
+            }
+        }
+    }
+
+}
+
+
+
+//底部蒙曾
 .footer-layer{
     position: fixed;
     left:0;
@@ -116,21 +150,34 @@
         opacity:1;
     }
 }
-
+//底部蒙曾内容
 .content{
     position: fixed;
     width:100%;
-    bottom:0;
     margin: auto;
     line-height: 24px;
     font-size: 16px;
     background: #fff;
-    transform: translate3d(0,100%,0);
     transition: transform ease .5s;
+    &.bottom{
+        bottom:0;
+        transform: translate3d(0,100%,0);
+    }
+    &.right{
+        right:0;
+        bottom: 100px;
+        transform: translate3d(100%,0,0);
+    }
     &.show{
         transform: translate3d(0,0,0);
     }
+
 }
+
+
+
+
+
 a{
     color: $red;
 }

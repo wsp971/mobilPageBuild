@@ -45,14 +45,27 @@
     </div>
 
     <div class="wrapper">
-        <a href="javascript:;" onclick="tooglefooter()">底部出来</a>
-        <p class="desc">这里有个点，给body 加上fixed定位 就可让页面停止滚动,但有个缺陷是，加上fixed ，点击蒙层小时之后，页面还是停留在顶部。看使用场景来使用，另外一个防止页面滚动的可以设置body 的width 为100 ，让最外层元素来滚动</p>
+        <a href="javascript:;" onclick="tooglefooter()">点我底部出来</a>
+        <a href="javascript:;" onclick="toogleNav()">点我右边出来</a>
+        <p class="desc">这里有个点，给body 加上fixed定位 就可让页面停止滚动,但有个缺陷是，加上fixed ，点击蒙层小时之后，页面还是停留在顶部。
+            另外一个防止页面滚动的可以设置body的  overflow:hidden ，这个兼容性好，没有副作用</p>
 
     </div>
+
+    <div class="wrapper">
+        <p class="doc">气泡</p>
+        <ul class="qipao">
+            <li>气泡1</li>
+            <li>气泡2</li>
+            <li>气泡3</li>
+            <li>很长的气泡很长的气泡</li>
+        </ul>
+    </div>
+
 
     <div class="footer-layer">
     </div>
-    <div class="content">
+    <div class="content bottom">
         <p>hadhfadfadfadfkja</p>
         <p>hadhfadfadfadfkja</p>
         <p>hadhfadfadfadfkja</p>
@@ -61,6 +74,13 @@
         <p>hadhfadfadfadfkja</p>
         <p>hadhfadfadfadfkja</p>
         <p>hadhfadfadfadfkja</p>
+    </div>
+    <div class="content right">
+        <p>adfjadslfjadlfjaldfj</p>
+        <p>adfjadslfjadlfjaldfj</p>
+        <p>adfjadslfjadlfjaldfj</p>
+        <p>adfjadslfjadlfjaldfj</p>
+        <p>adfjadslfjadlfjaldfj</p>
     </div>
 
     <!--<div class="appcontainer">-->
@@ -86,7 +106,7 @@
 
 	    function tooglefooter(){
 		    var footerLayer = document.querySelector(".footer-layer");
-		    var content = document.querySelector(".content");
+		    var content = document.querySelector(".content.bottom");
 		    if(footerLayer.classList.contains("show")){
 		    	footerLayer.classList.remove("show");
 		    	content.classList.remove("show");
@@ -106,8 +126,42 @@
 
             },false);
 	    }
+	    function toogleNav(){
+		    var footerLayer = document.querySelector(".footer-layer");
+		    var content = document.querySelector(".content.right");
+		    if(footerLayer.classList.contains("show")){
+			    footerLayer.classList.remove("show");
+			    content.classList.remove("show");
+			    document.body.style.overflow="auto";
+		    }else{
+			    footerLayer.classList.add("show");
+			    content.classList.add("show");
+			    document.body.style.overflow = "hidden";
+		    }
+		    footerLayer.addEventListener("click", function(){
+			    footerLayer.classList.remove("show");
+			    content.classList.remove("show");
+			    document.body.style.overflow="auto";
+
+		    },false);
+        }
 
     </script>
+
+    <script>
+        qipao();
+        function qipao(){
+        	var qipaoContainer = document.querySelector("ul.qipao");
+        	setInterval(function(){
+		        var qipao = document.querySelector("ul.qipao>li");
+        		qipaoContainer.append(qipao);
+        		qipao.classList.remove("qipao");
+        		qipaoContainer.firstElementChild.classList.add("qipao");
+            },5000);
+        }
+
+    </script>
+
 
 
 </body>
