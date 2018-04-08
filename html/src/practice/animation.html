@@ -14,8 +14,23 @@
         <p class="doc">左右摇晃的div</p>
         <div class="yaohuang"></div>
 
-        <p class="doc"> loading 加载效果</p>
 
+
+
+
+        <p class="doc">类似滑动的蒙层</p>
+        <div class="appcontainer2">
+            <div class="header">
+                <span class="menu">点我出来</span>
+            </div>
+            <div class="app-menu">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <p class="doc"> loading 加载效果</p>
         <div class="loading1">
             <div class="one"></div>
             <div class="two"></div>
@@ -27,16 +42,25 @@
         <div class="loading2 ease-in-out"></div>
 
         <div class="loading3"></div>
+    </div>
 
-        <p class="doc">类似滑动的蒙层</p>
-        <div class="appcontainer2">
-            <div class="header">
-                <span class="menu">点我出来</span>
-            </div>
-            <div class="app-menu">
+    <div class="wrapper">
+        <a href="javascript:;" onclick="tooglefooter()">底部出来</a>
+        <p class="desc">这里有个点，给body 加上fixed定位 就可让页面停止滚动,但有个缺陷是，加上fixed ，点击蒙层小时之后，页面还是停留在顶部。看使用场景来使用，另外一个防止页面滚动的可以设置body 的width 为100 ，让最外层元素来滚动</p>
 
-            </div>
-        </div>
+    </div>
+
+    <div class="footer-layer">
+    </div>
+    <div class="content">
+        <p>hadhfadfadfadfkja</p>
+        <p>hadhfadfadfadfkja</p>
+        <p>hadhfadfadfadfkja</p>
+        <p>hadhfadfadfadfkja</p>
+        <p>hadhfadfadfadfkja</p>
+        <p>hadhfadfadfadfkja</p>
+        <p>hadhfadfadfadfkja</p>
+        <p>hadhfadfadfadfkja</p>
     </div>
 
     <!--<div class="appcontainer">-->
@@ -57,5 +81,34 @@
             
         },false);
     </script>
+
+    <script>
+
+	    function tooglefooter(){
+		    var footerLayer = document.querySelector(".footer-layer");
+		    var content = document.querySelector(".content");
+		    if(footerLayer.classList.contains("show")){
+		    	footerLayer.classList.remove("show");
+		    	content.classList.remove("show");
+		    	document.body.style.overflow="auto";
+		    	// document.body.classList.remove("overflowhide");
+            }else{
+		    	footerLayer.classList.add("show");
+		    	content.classList.add("show");
+			    document.body.style.overflow = "hidden";
+			    // document.body.classList.add("overflowhide");
+            }
+            footerLayer.addEventListener("click", function(){
+            	footerLayer.classList.remove("show");
+            	content.classList.remove("show");
+	            document.body.style.overflow="auto";
+	            // document.body.classList.remove("overflowhide");
+
+            },false);
+	    }
+
+    </script>
+
+
 </body>
 </html>

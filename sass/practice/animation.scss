@@ -1,5 +1,6 @@
 @import "../public/practice";
 @import "../public/color";
+@import "../public/reset";
 
 /*实现一个左右晃动的效果*/
 .yaohuang{
@@ -86,7 +87,6 @@
         }
     }
 
-
 }
 
 .loading3{
@@ -99,6 +99,54 @@
     animation: loading2 .5s infinite  linear;
 }
 
+
+
+.footer-layer{
+    position: fixed;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    background: rgba(0,0,0,.5);
+    opacity:0;
+    display:none;
+    transiton: all ease .5s;
+    &.show{
+        display: block;
+        opacity:1;
+    }
+}
+
+.content{
+    position: fixed;
+    width:100%;
+    bottom:0;
+    margin: auto;
+    line-height: 24px;
+    font-size: 16px;
+    background: #fff;
+    transform: translate3d(0,100%,0);
+    transition: transform ease .5s;
+    &.show{
+        transform: translate3d(0,0,0);
+    }
+}
+a{
+    color: $red;
+}
+
+
+//蒙曾弹出，添加这个类到body 上，防止页面滚动条滚动，还不如下面这个类,这个类在取消蒙曾之后会定位页面到顶部、不会还原到原来的页面
+.overflowhide{
+    position:fixed;
+    width:100%;
+    top:0;
+    left: 0;
+}
+//加载这个类到body 上才能够真正的防止滚动条滚动，overflow:hidden overflow: auto 之间切换就可以，具体为什么，overflow: hidden 的特性是，隐藏区域外的内容，但还是具有滚动特性的。
+.overflowhide2{
+    overflow: hidden;
+}
 
 .appcontainer{
     width: 375px;
