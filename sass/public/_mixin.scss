@@ -80,6 +80,12 @@
 }
 
 
+/*最佳可访问性隐藏*/
+@mixin clip{
+  position: absolute;
+  clip: rect(0,0,0,0);
+}
+
 
 
 

@@ -54,32 +54,25 @@
 
 .loading2{
     text-align: center;
-    &:before{
-        width: 40px;
-        height: 40px;
-        display: inline-block;
-        border-radius: 40px;
-        content: "";
-        border: 2px solid $transparent;
-        border:{
-            left:{
-                color: $red;
-            }
-            top:{
-                color: $red;
-            }
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    border-radius: 40px;
+    border: 2px solid $transparent;
+    border:{
+        left:{
+            color: $red;
         }
-        animation: loading2 .8s infinite linear;
+        top:{
+            color: $red;
+        }
     }
+    animation: loading2 .8s infinite linear;
     &.ease{
-        &:before{
-            animation-timing-function: ease;
-        }
+        animation-timing-function: ease;
     }
     &.ease-in-out{
-        &:before{
-            animation-timing-function: ease-in-out;
-        }
+        animation-timing-function: ease-in-out;
     }
     @at-root {
         @keyframes loading2 {
@@ -96,7 +89,15 @@
 
 }
 
-
+.loading3{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    clip: rect(0,40px,20px,0);
+    border-radius: 40px;
+    border: 2px solid $red;
+    animation: loading2 .5s infinite  linear;
+}
 
 
 .appcontainer{
