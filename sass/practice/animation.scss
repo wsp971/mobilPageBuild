@@ -134,6 +134,41 @@ ul.qipao{
 
 
 
+
+.qipao2{
+    padding:0 10px;
+    color: #fff;
+    border-radius: 14px;
+    font-size: 12px;
+    line-height: 14px;
+    animation: qipao2 2.3s 1.2s linear alternate infinite;
+    &.blue{
+        background: linear-gradient(90deg,#609bea,#84baf1);
+    }
+    &.yellow{
+        background: linear-gradient(90deg,#faaf32,#ffc36a);
+    }
+    &.red{
+        background: linear-gradient(90deg,#ff5353,#ff7676);
+    }
+    @at-root{
+        @keyframes qipao2{
+            0%{
+                transform: translate3d(0,0,0);
+            }
+            50%{
+                transform: translate3d(2px,-2px,0);
+            }
+            100%{
+                transform: translate3d(4px,0,0);
+            }
+
+        }
+    }
+}
+
+
+
 //蒙曾
 .footer-layer{
     position: fixed;
@@ -171,7 +206,6 @@ ul.qipao{
     &.show{
         transform: translate3d(0,0,0);
     }
-
 }
 
 
@@ -220,7 +254,6 @@ a{
             opacity: 1;
         }
     }
-
 }
 .appcontainer2{
     width: 375px;
