@@ -68,6 +68,20 @@
             <span class="qipao2 blue">气泡4</span>
         </div>
 
+        <p class="doc">通知列表</p>
+
+        <div class="listContainer">
+            <div class="list">
+                <div class="item">xxxxxxxxxxxxxxxxxx</div>
+                <div class="item">sssssssssssssssss</div>
+                <div class="item">ttttttttttttttttt</div>
+                <div class="item">lllllllllllllllll</div>
+                <div class="item">wwwwwwwwwwwwwwwww</div>
+                <div class="item">ggggggggggggggggg</div>
+            </div>
+
+        </div>
+
     </div>
 
 
@@ -168,6 +182,27 @@
             },5000);
         }
 
+    </script>
+
+
+    <script>
+
+
+        tongzhi();
+        function tongzhi(){
+        	var tongzhiContainer = document.querySelector(".listContainer .list");
+        	var childrenlen = tongzhiContainer.children.length;
+            var height = tongzhiContainer.firstElementChild.offsetHeight;
+            var translatey = 0;
+            setInterval(function(){
+            	translatey +=height;
+            	if(translatey > childrenlen * height){
+            		translatey = 0;
+                }
+            	tongzhiContainer.style.transform = "translate3d(0,"+ -translatey +"px , 0)";
+            },1500);
+
+        }
     </script>
 
 

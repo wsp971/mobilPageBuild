@@ -134,38 +134,79 @@ ul.qipao{
 
 
 
-
+//晃动的气泡标签
 .qipao2{
     padding:0 10px;
     color: #fff;
     border-radius: 14px;
     font-size: 12px;
     line-height: 14px;
-    animation: qipao2 2.3s 1.2s linear alternate infinite;
+    display: inline-block;
+    animation: a_qipao 2.3s 1.2s linear alternate infinite;
     &.blue{
-        background: linear-gradient(90deg,#609bea,#84baf1);
+        background: linear-gradient(90deg,#609bea,#84baf1);             /*渐变背景*/
+        box-shadow: 0 2px 9px #c0dfff;
+        animation-delay: 1.4s;
     }
     &.yellow{
         background: linear-gradient(90deg,#faaf32,#ffc36a);
+        box-shadow: 0 2px 9px #ffdba9;
+        animation-delay: 1.6s;
     }
     &.red{
         background: linear-gradient(90deg,#ff5353,#ff7676);
+        box-shadow: 0 2px 9px #ffdddd;
+        animation-delay: 1.9s
     }
     @at-root{
-        @keyframes qipao2{
+        @keyframes a_qipao{
             0%{
                 transform: translate3d(0,0,0);
             }
             50%{
-                transform: translate3d(2px,-2px,0);
+                transform: translate3d(4px,-4px,0);
             }
             100%{
-                transform: translate3d(4px,0,0);
+                transform: translate3d(8px,0,0);
             }
 
         }
     }
 }
+
+div.listContainer{
+    width: 240px;
+    height: 30px;
+    margin: auto;
+    line-height: 30px;
+    font-size: 16px;
+    overflow: hidden;
+    border: 1px solid $grey;
+    .list{
+        transition: transform .5s ease-in-out;
+        .item{
+            text-align: center;
+            height: 100%;
+            margin: 0 20px;
+            &.show{
+                animation: showlist 2s linear ;
+            }
+        }
+    }
+
+    //@at-root {
+    //    @keyframes showlist{
+    //        0%{
+    //            transform: translate3d(0,100%,0);
+    //        }
+    //        100%{
+    //            transform: translate3d(0,-100%,0);
+    //        }
+    //    }
+    //}
+
+}
+
 
 
 
