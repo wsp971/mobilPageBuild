@@ -183,27 +183,53 @@ div.listContainer{
     overflow: hidden;
     border: 1px solid $grey;
     .list{
-        transition: transform .5s ease-in-out;
+        //transition: transform .5s ease-in-out;
         .item{
             text-align: center;
             height: 100%;
             margin: 0 20px;
-            &.show{
-                animation: showlist 2s linear ;
+        }
+    }
+}
+
+div.cardContainer{
+    width: 400px;
+    height: 200px;
+    border: 1px solid #ccc;
+    margin: auto;
+    overflow: hidden;
+    .list{
+        width: 1000px;
+        transition: transform .5s ease-in-out;
+        .card{
+            display: inline-block;
+            height: 200px;
+            width: 150px;
+            &.blue{
+                background: #84baf1;
+            }
+            &.yellow{
+                background: #ffdba9;
+            }
+            &.red{
+                background: #ff5c5c;
+            }
+            &.curr{
+                animation: scal .5s ease-in-out;
+                @at-root {
+                    @keyframes scal{
+                        0%{
+                            transform: scale(0);
+                        }
+                        100%{
+                            transform: scale(1);
+                        }
+                    }
+                }
             }
         }
     }
 
-    //@at-root {
-    //    @keyframes showlist{
-    //        0%{
-    //            transform: translate3d(0,100%,0);
-    //        }
-    //        100%{
-    //            transform: translate3d(0,-100%,0);
-    //        }
-    //    }
-    //}
 
 }
 

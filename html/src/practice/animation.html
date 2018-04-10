@@ -84,6 +84,22 @@
 
     </div>
 
+    <div class="wrapper">
+        <p class="doc">卡片切换</p>
+        <div class="cardContainer">
+            <div class="list">
+                <div class="card red"></div>
+                <div class="card blue curr"></div>
+                <div class="card yellow"></div>
+            </div>
+        </div>
+
+        <div class="operate">
+            <span class="button" onclick="goLeft()">左切</span>
+            <span class="button" onclick="goRight()">右切</span>
+        </div>
+    </div>
+
 
     <div class="footer-layer">
     </div>
@@ -186,23 +202,49 @@
 
 
     <script>
-
-
         tongzhi();
         function tongzhi(){
         	var tongzhiContainer = document.querySelector(".listContainer .list");
         	var childrenlen = tongzhiContainer.children.length;
             var height = tongzhiContainer.firstElementChild.offsetHeight;
+            var clonefirstChild = tongzhiContainer.firstElementChild.cloneNode(true);
+            tongzhiContainer.appendChild(clonefirstChild);
             var translatey = 0;
             setInterval(function(){
             	translatey +=height;
             	if(translatey > childrenlen * height){
             		translatey = 0;
+            		tongzhiContainer.style.cssText = "transition:null;translate3d(0,0,0)";
+                }else{
+            		tongzhiContainer.style.cssText = "transform:translate3d(0,"+ -translatey +"px , 0)" + "; transition: transform .5s ease-in-out";
                 }
-            	tongzhiContainer.style.transform = "translate3d(0,"+ -translatey +"px , 0)";
             },1500);
 
         }
+    </script>
+
+
+    <script>
+
+	    function goLeft(){
+            var card = document.querySelector(".cardContainer .list .card");
+            var width = card.offsetWidth;
+            var list = document.querySelector(".cardContainer .list");
+            list.style.transform = "translate3d("+ -width+"px,0,0)";
+
+
+
+        }
+        function goRight(){
+
+        }
+
+        function cardList(){
+        	var cardlist = document.querySelector(".cardContainer");
+
+        }
+
+
     </script>
 
 
