@@ -99,6 +99,25 @@
     animation: loading2 .5s infinite  linear;
 }
 
+.loading4{
+    display:inline-block;
+    width:125px;
+    height: 125px;
+    background: url("../../images/loading.jpg") no-repeat;
+    background-size:1000px;
+    animation: loadingimg 5s steps(8) infinite;
+    @at-root {
+         @keyframes loadingimg {
+             0%{
+                 background-position: 0;
+             }
+             100%{
+                 background-position: -1000px;
+             }
+         }
+    }
+}
+
 
 /*气泡效果*/
 ul.qipao{
