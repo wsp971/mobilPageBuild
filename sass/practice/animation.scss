@@ -118,6 +118,29 @@
     }
 }
 
+.chaifeng{
+    width:100px;
+    height: 50px;
+    display:inline-block;
+    background: url("../../images/chaifen.png");
+    background-size: 100px 50px;
+    animation: chaifen 1s linear alternate infinite ;
+    @at-root {
+        @keyframes chaifen {
+            0%{
+                opacity: .5;
+
+            }
+            100%{
+                opacity: 1;
+                transform: translate3d(0,-10px,0);
+            }
+
+        }
+    }
+
+}
+
 
 /*气泡效果*/
 ul.qipao{

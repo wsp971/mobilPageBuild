@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../../css/practice/flex.css">
+    <title>Document</title>
+</head>
+<body>
+<div class="wrapper">
+    <p class="doc">本篇用来练习flex 布局</p>
+    <div class="desc">
+        flex 的属性有：
+    <ul>
+        <li>flex-direction: row| row-reverse| column| column-reverse(决定主轴方向）</li>
+        <li>flex-wrap: nowrap | wrap | wrap-reverse（决定如何换行）</li>
+        <li>flex-flow: < flex-direction > < flex-wrap > 两个属性的集合</li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    </div>
+
+    <div class="container">
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+    <p class="doc">flex 布局 默认从左向右</p>
+    <div class="container flex">
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+    <p class="doc">水平居中</p>
+    <div class="container flex center">
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+    <p class="doc">左</p>
+    <div class="container flex left">
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+    <p class="doc">右</p>
+    <div class="container flex right">
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+    <p class="doc">两边对齐</p>
+    <div class="container flex between">
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+    <p class="doc">均分空间</p>
+    <div class="container flex around">
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+
+    <p class="doc">垂直居中-垂直方向</p>
+    <div class="container flex middle">
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+
+    <p class="doc">垂直顶部</p>
+    <div class="container flex top">
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+
+    <p class="doc">垂直底部</p>
+    <div class="container flex bottom">
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+    <p class="doc">垂直拉伸</p>
+    <p class="desc">
+        如果项目未设置高度或设为auto，将占满整个容器的高度。
+    </p>
+    <div class="container flex stretch">
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+
+
+</div>
+
+</body>
+</html>

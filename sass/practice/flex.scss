@@ -1,0 +1,56 @@
+@import "../public/practice";
+@import "../public/reset";
+
+
+.container{
+  width: 400px;
+  height: 200px;
+  background: #fff;
+  border: 1px solid #ccc;
+  margin: auto;
+  .child{
+      width: 50px;
+      height: 50px;
+      background: orange;
+      margin: 5px;
+      border: 1px solid #ccc;
+  }
+}
+
+.flex{
+  display: flex;
+  /*水平布局属性 justify-content*/
+  &.center{
+    justify-content: center;
+  }
+  &.left{
+    justify-content: flex-start;
+  }
+  &.right{
+    justify-content: flex-end;
+  }
+  &.between{
+    justify-content: space-between;
+  }
+  &.around{
+    justify-content: space-around;
+  }
+  /*垂直布局属性 align-items*/
+
+  &.top{
+    align-items: flex-start;
+  }
+
+  &.middle{
+    align-items: center;
+  }
+  &.bottom{
+    align-items: flex-end;
+  }
+  &.stretch{
+    align-items: stretch;
+    .child{
+      height: auto;
+    }
+  }
+}
