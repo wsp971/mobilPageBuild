@@ -12,15 +12,27 @@
 <div class="wrapper">
     <p class="doc">本篇用来练习flex 布局</p>
     <div class="desc">
-        flex 的属性有：
-    <ul>
+        以下为flex 容器的属性：
+    <ui>
         <li>flex-direction: row| row-reverse| column| column-reverse(决定主轴方向）</li>
         <li>flex-wrap: nowrap | wrap | wrap-reverse（决定如何换行）</li>
         <li>flex-flow: < flex-direction > < flex-wrap > 两个属性的集合</li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
+        <li>justify-content: flex-start| flex-end | center | space-between | space-around | space-evenly(决定主轴方向的对齐方式)</li>
+        <li>align-items: flex-start | flex-end | center | baseline | stretch  (决定交叉轴上的对齐方式)</li>
+        <li>align-content: flex-start | flex-end | center | space-between | space-around| space-evenly| stretch(决定多跟轴线的对齐方式，如果只有一根轴线，不起作用)</li>
+    </ui>
+    </div>
+    
+    <div class="desc">
+        以下属性是flex容器所包含的项目的属性：
+        <ui>
+            <li>order: 数值 （定义项目的顺序，数值越小，越往前，默认是0）</li>
+            <li>flex-grow:  数值 （定义项目的放大比例，默认为0，即存在剩余空间，也不放大）</li>
+            <li>flex-shrink: 数值 （定义了项目的缩小比例，默认为1，即如果空间不足，改项目将缩小）</li>
+            <li>flex-basis</li>
+            <li>flex: < flex-grow > < flex-shrink > < flex-basis > 三个属性的集合，默认值是 0 1 auto ,该属性有两个快捷值：none(0 0 auto) 和 auto(1 1 auto)</li>
+            <li>align-self: auto | flex-start | flex-end | center | baseline | stretch (设置单个项目在交叉轴上的对齐方式，可覆盖 align-items 属性值，auto代表继承父元素的align-itmes 属性，如果没有父元素，代表 stretch)</li>
+        </ui>
     </div>
 
     <div class="container">
@@ -29,6 +41,97 @@
         <div class="child"></div>
         <div class="child"></div>
     </div>
+
+
+
+
+</div>
+
+<div class="wrapper">
+    <p class="doc"> flex-direction 属性</p>
+    <p class="doc"> row </p>
+    <div class="container flex row">
+        <div class="child">1</div>
+        <div class="child">2</div>
+        <div class="child">3</div>
+        <div class="child">4</div>
+        <div class="child">5</div>
+    </div>
+    <p class="doc"> row-reverse </p>
+    <div class="container flex row-reverse">
+        <div class="child">1</div>
+        <div class="child">2</div>
+        <div class="child">3</div>
+        <div class="child">4</div>
+        <div class="child">5</div>
+    </div>
+    <p class="doc"> column</p>
+    <div class="container flex column">
+        <div class="child">1</div>
+        <div class="child">2</div>
+        <div class="child">3</div>
+        <div class="child">4</div>
+        <div class="child">5</div>
+    </div>
+    <p class="doc"> column-reverse</p>
+    <div class="container flex column-reverse">
+        <div class="child">1</div>
+        <div class="child">2</div>
+        <div class="child">3</div>
+        <div class="child">4</div>
+        <div class="child">5</div>
+    </div>
+</div>
+
+<div class="wrapper">
+    <p class="doc">flex-wrap 属性</p>
+    <p class="doc"> no-wrap </p>
+    <div class="container flex no-wrap">
+        <div class="child">1</div>
+        <div class="child">2</div>
+        <div class="child">3</div>
+        <div class="child">4</div>
+        <div class="child">5</div>
+        <div class="child">6</div>
+        <div class="child">7</div>
+        <div class="child">8</div>
+        <div class="child">9</div>
+        <div class="child">10</div>
+    </div>
+
+    <p class="doc"> wrap </p>
+    <div class="container flex wrap">
+        <div class="child">1</div>
+        <div class="child">2</div>
+        <div class="child">3</div>
+        <div class="child">4</div>
+        <div class="child">5</div>
+        <div class="child">6</div>
+        <div class="child">7</div>
+        <div class="child">8</div>
+        <div class="child">9</div>
+        <div class="child">10</div>
+    </div>
+
+    <p class="doc"> wrap-reverse</p>
+    <div class="container flex wrap-reverse">
+        <div class="child">1</div>
+        <div class="child">2</div>
+        <div class="child">3</div>
+        <div class="child">4</div>
+        <div class="child">5</div>
+        <div class="child">6</div>
+        <div class="child">7</div>
+        <div class="child">8</div>
+        <div class="child">9</div>
+        <div class="child">10</div>
+    </div>
+
+</div>
+
+
+<div class="wrapper">
+    <p class="doc"> justify-content 属性：</p>
     <p class="doc">flex 布局 默认从左向右</p>
     <div class="container flex">
         <div class="child"></div>
@@ -36,7 +139,7 @@
         <div class="child"></div>
         <div class="child"></div>
     </div>
-    <p class="doc">水平居中</p>
+    <p class="doc">水平居中 center</p>
     <div class="container flex center">
         <div class="child"></div>
         <div class="child"></div>
@@ -51,7 +154,7 @@
         <div class="child"></div>
         <div class="child"></div>
     </div>
-    <p class="doc">左</p>
+    <p class="doc">左 flex-start</p>
     <div class="container flex left">
         <div class="child"></div>
         <div class="child"></div>
@@ -59,7 +162,7 @@
         <div class="child"></div>
         <div class="child"></div>
     </div>
-    <p class="doc">右</p>
+    <p class="doc">右 flex-end</p>
     <div class="container flex right">
         <div class="child"></div>
         <div class="child"></div>
@@ -67,7 +170,7 @@
         <div class="child"></div>
         <div class="child"></div>
     </div>
-    <p class="doc">两边对齐</p>
+    <p class="doc">两边对齐 space-between</p>
     <div class="container flex between">
         <div class="child"></div>
         <div class="child"></div>
@@ -75,7 +178,7 @@
         <div class="child"></div>
         <div class="child"></div>
     </div>
-    <p class="doc">均分空间</p>
+    <p class="doc">均分空间 space-around</p>
     <div class="container flex around">
         <div class="child"></div>
         <div class="child"></div>
@@ -83,7 +186,18 @@
         <div class="child"></div>
         <div class="child"></div>
     </div>
+    <p class="doc"> 真正的均分 space-evenly</p>
+    <div class="container flex evenly">
+        <div class="child no-margin"></div>
+        <div class="child no-margin"></div>
+        <div class="child no-margin"></div>
+        <div class="child no-margin"></div>
+        <div class="child no-margin"></div>
+    </div>
+</div>
 
+<div class="wrapper">
+    <p class="doc">align-items 属性</p>
     <p class="doc">垂直居中-垂直方向</p>
     <div class="container flex middle">
         <div class="child"></div>
@@ -122,7 +236,278 @@
         <div class="child"></div>
     </div>
 
+</div>
 
+<div class="wrapper">
+    <p class="doc">align-content 属性</p>
+    <p class="doc">flex-start</p>
+    <div class="container flex wrap start">
+        <div class="child">1</div>
+        <div class="child">2</div>
+        <div class="child">3</div>
+        <div class="child">4</div>
+        <div class="child">5</div>
+        <div class="child">6</div>
+        <div class="child">7</div>
+        <div class="child">8</div>
+        <div class="child">9</div>
+        <div class="child">10</div>
+    </div>
+    <p class="doc">flex-end</p>
+    <div class="container flex wrap end">
+        <div class="child">1</div>
+        <div class="child">2</div>
+        <div class="child">3</div>
+        <div class="child">4</div>
+        <div class="child">5</div>
+        <div class="child">6</div>
+        <div class="child">7</div>
+        <div class="child">8</div>
+        <div class="child">9</div>
+        <div class="child">10</div>
+    </div>
+    <p class="doc">center</p>
+    <div class="container flex wrap a-center">
+        <div class="child">1</div>
+        <div class="child">2</div>
+        <div class="child">3</div>
+        <div class="child">4</div>
+        <div class="child">5</div>
+        <div class="child">6</div>
+        <div class="child">7</div>
+        <div class="child">8</div>
+        <div class="child">9</div>
+        <div class="child">10</div>
+    </div>
+    <p class="doc">space-between</p>
+    <div class="container flex wrap a-between">
+        <div class="child">1</div>
+        <div class="child">2</div>
+        <div class="child">3</div>
+        <div class="child">4</div>
+        <div class="child">5</div>
+        <div class="child">6</div>
+        <div class="child">7</div>
+        <div class="child">8</div>
+        <div class="child">9</div>
+        <div class="child">10</div>
+    </div>
+    <p class="doc">space-around</p>
+    <div class="container flex wrap a-around">
+        <div class="child">1</div>
+        <div class="child">2</div>
+        <div class="child">3</div>
+        <div class="child">4</div>
+        <div class="child">5</div>
+        <div class="child">6</div>
+        <div class="child">7</div>
+        <div class="child">8</div>
+        <div class="child">9</div>
+        <div class="child">10</div>
+    </div>
+    <p class="doc">space-evenly</p>
+    <div class="container flex wrap a-evenly">
+        <div class="child">1</div>
+        <div class="child">2</div>
+        <div class="child">3</div>
+        <div class="child">4</div>
+        <div class="child">5</div>
+        <div class="child">6</div>
+        <div class="child">7</div>
+        <div class="child">8</div>
+        <div class="child">9</div>
+        <div class="child">10</div>
+    </div>
+</div>
+
+<div class="wrapper" style="width: 1000px;">
+    <p class="doc">简单应用一下</p>
+    <div class="weixin">
+        <div class="weixin-menu">
+            <div class="operation-icon">
+                <div class="item red"></div>
+                <div class="item yellow"></div>
+                <div class="item green"></div>
+            </div>
+            <img src="http://jdc.jd.com/img/45x45?color=eee" alt="" class="face-image">
+            <div class="icon"></div>
+            <div class="icon"></div>
+            <div class="icon"></div>
+            <div class="icon last"></div>
+        </div>
+        <div class="weixin-list">
+            <div class="weixin-list-header">
+                <input type="text" placeholder="搜索">
+                <i class="add"></i>
+            </div>
+            <div class="weixin-list-container">
+                <div class="item">
+                    <div class="pic">
+                        <img src="http://jdc.jd.com/img/45x45?color=eee" alt=""> </img>
+                        <span class="dot">1</span>
+                    </div>
+                    <div class="content">
+                        <div class="main-info">在深圳 <span class="time">16:29</span></div>
+                        <div class="other-info">
+                            <div class="msg">哈哈哈哈哈</div>
+                            <div class="not-notify"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="http://jdc.jd.com/img/45x45?color=eee" alt=""> </img>
+                        <span class="dot">2</span>
+                    </div>
+                    <div class="content">
+                        <div class="main-info">在深圳 <span class="time">16:29</span></div>
+                        <div class="other-info">
+                            <div class="msg">超长消息案件的发生地方加咖啡多少积分卡asfdsaf</div>
+                            <div class="not-notify"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="http://jdc.jd.com/img/45x45?color=eee" alt=""> </img>
+                        <span class="dot"></span>
+                    </div>
+                    <div class="content">
+                        <div class="main-info">在深圳 <span class="time">16:29</span></div>
+                        <div class="other-info">
+                            <div class="msg">哈哈哈哈哈</div>
+                            <div class="not-notify"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="http://jdc.jd.com/img/45x45?color=eee" alt=""> </img>
+                        <!--<span class="dot">1</span>-->
+                    </div>
+                    <div class="content">
+                        <div class="main-info">在深圳 <span class="time">16:29</span></div>
+                        <div class="other-info">
+                            <div class="msg">哈哈哈哈哈</div>
+                            <div class="not-notify"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="http://jdc.jd.com/img/45x45?color=eee" alt=""> </img>
+                        <span class="dot">1</span>
+                    </div>
+                    <div class="content">
+                        <div class="main-info">在深圳 <span class="time">16:29</span></div>
+                        <div class="other-info">
+                            <div class="msg">哈哈哈哈哈</div>
+                            <div class="not-notify"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="http://jdc.jd.com/img/45x45?color=eee" alt=""> </img>
+                        <span class="dot">1</span>
+                    </div>
+                    <div class="content">
+                        <div class="main-info">在深圳 <span class="time">16:29</span></div>
+                        <div class="other-info">
+                            <div class="msg">哈哈哈哈哈</div>
+                            <div class="not-notify"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="http://jdc.jd.com/img/45x45?color=eee" alt=""> </img>
+                        <span class="dot">1</span>
+                    </div>
+                    <div class="content">
+                        <div class="main-info">在深圳 <span class="time">16:29</span></div>
+                        <div class="other-info">
+                            <div class="msg">哈哈哈哈哈</div>
+                            <div class="not-notify"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="http://jdc.jd.com/img/45x45?color=eee" alt=""> </img>
+                        <span class="dot">1</span>
+                    </div>
+                    <div class="content">
+                        <div class="main-info">在深圳 <span class="time">16:29</span></div>
+                        <div class="other-info">
+                            <div class="msg">哈哈哈哈哈</div>
+                            <div class="not-notify"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="http://jdc.jd.com/img/45x45?color=eee" alt=""> </img>
+                        <span class="dot">1</span>
+                    </div>
+                    <div class="content">
+                        <div class="main-info">在深圳 <span class="time">16:29</span></div>
+                        <div class="other-info">
+                            <div class="msg">哈哈哈哈哈</div>
+                            <div class="not-notify"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="http://jdc.jd.com/img/45x45?color=eee" alt=""> </img>
+                        <span class="dot">1</span>
+                    </div>
+                    <div class="content">
+                        <div class="main-info">在深圳 <span class="time">16:29</span></div>
+                        <div class="other-info">
+                            <div class="msg">哈哈哈哈哈</div>
+                            <div class="not-notify"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="http://jdc.jd.com/img/45x45?color=eee" alt=""> </img>
+                        <span class="dot">1</span>
+                    </div>
+                    <div class="content">
+                        <div class="main-info">在深圳 <span class="time">16:29</span></div>
+                        <div class="other-info">
+                            <div class="msg">哈哈哈哈哈</div>
+                            <div class="not-notify"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="weixin-content">
+            <div class="weixin-content-header">
+                在深圳
+            </div>
+            <div class="weixin-content-msgs">
+                <div class="msg">
+                    <img src="http://jdc.jd.com/img/30x30?color=eee" alt="" class="msg-user-photo">
+                    <div class="msg-says">skdfjasjdflasjfkasjfkafj</div>
+                </div>
+                <div class="msg right">
+                    <img src="http://jdc.jd.com/img/30x30?color=eee" alt="" class="msg-user-photo">
+                    <div class="msg-says">skdfjasjdflasjfkasjfkafj</div>
+                </div>
+                <div class="msg right">
+                    <img src="http://jdc.jd.com/img/30x30?color=eee" alt="" class="msg-user-photo">
+                    <div class="msg-says">我靠，马丹阿道夫就爱看戴假发爱打飞机奥拉夫阿道夫电视剧发就发快递费</div>
+                </div>
+            </div>
+            <div class="weixin-content-send"></div>
+        </div>
+    </div>
 </div>
 
 </body>
