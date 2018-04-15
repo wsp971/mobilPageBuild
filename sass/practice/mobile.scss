@@ -1,0 +1,14 @@
+/*移动端常用布局*/
+
+@import "../public/public";
+@import "../public/practice";
+@import "../public/reset";
+
+@include rem_query;
+
+.container{
+  	width: rem(375);
+  	font-size: rem(20);
+  	margin: auto;
+  	background: #ccc;
+}

@@ -11,7 +11,7 @@
 }
 
 /* 图片路径 */
-$imgPath : '../images';
+$imgPath : '../../images';
 
 %oneline{
   overflow: hidden;
@@ -80,6 +80,27 @@ $imgPath : '../images';
   overflow: hidden;//非必选项，页面有 sticky 请不要使用
   margin: 0 auto;
 }
-.test{
-  display: block;
+
+@mixin rem_query($baseWidth:375){
+  $vw_fontsize: 20;
+  html{
+    font-size: 20px;
+    font-size: ($vw_fontsize / $baseWidth) * 100vw;
+    @media screen and (max-width: 320px) {
+        font-size: ($vw_fontsize/$baseWidth) * 320px;
+    }
+    @media screen and (min-width: 540px){
+        font-size: ($vw_fontsize/$baseWidth) * 540px;
+    }
+  }
+}
+
+@function rem($val){
+  $rem_grid: 20;
+  $rem: $val/$rem_grid;
+  @if($rem ==0){
+      @return #{$rem};
+  }@else{
+      @return $rem / ($rem * 0 + 1) * 1rem;
+  }
 }
