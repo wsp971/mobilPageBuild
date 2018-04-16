@@ -1,6 +1,7 @@
 @import "../public/reset";
 @import "../public/public";
 @import "../public/practice";
+@import "../practice/icon";
 
 @include rem_query;
 
@@ -35,3 +36,39 @@
 	}
   }
 }
+
+
+.footer{
+  display:flex;
+  height: 60px;
+  width:100%;
+  justify-content: space-evenly;
+  background: #ffffff;
+  position: fixed;
+  bottom:0;
+  left:0;
+  border: 1px solid #ddd;
+  .item{
+	background: #fff;
+	width: rem(80);
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&.cur{
+	  	color: #98e440;
+	}
+	i{
+	   font-size: rem(30);
+	   width: rem(30);
+	   height: rem(30);
+	   line-height: rem(30);
+	}
+	.name{
+	   display:block;
+	   font-size: rem(16);
+	   //color: #ddd;
+	}
+  }
+}
+
