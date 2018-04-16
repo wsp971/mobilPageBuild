@@ -1,0 +1,37 @@
+@import "../public/reset";
+@import "../public/public";
+@import "../public/practice";
+
+@include rem_query;
+
+
+.container{
+  max-width:540px;
+  min-width:320px;
+  width: rem(375);
+  overflow: hidden;
+  margin: auto;
+}
+
+
+
+.flex_list{
+  display: flex;
+  flex-wrap: wrap;
+  background: #ffffff;
+  $border-color: #ddd;
+  .item{
+	width: 50%;
+	height: rem(275);
+	border:{
+	  bottom: 1px solid $border-color;
+	}
+	&:nth-child(2n+1){
+	  border-right: 1px solid $border-color;
+
+	}
+	&:nth-child(2n){
+	  margin-right: -1px;
+	}
+  }
+}

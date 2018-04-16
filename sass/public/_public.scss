@@ -74,12 +74,12 @@ $imgPath : '../../images';
   text-indent: rem(-9999px);
 }
 
-.wrapper{
-  width: rem(750);  // 计算方式  750/40 ＝ 18.75rem
-  height: auto;//如果没有高度限制，使用auto
-  overflow: hidden;//非必选项，页面有 sticky 请不要使用
-  margin: 0 auto;
-}
+//.wrapper{
+//  width: rem(750);  // 计算方式  750/40 ＝ 18.75rem
+//  height: auto;//如果没有高度限制，使用auto
+//  overflow: hidden;//非必选项，页面有 sticky 请不要使用
+//  margin: 0 auto;
+//}
 
 @mixin rem_query($baseWidth:375){
   $vw_fontsize: 20;
