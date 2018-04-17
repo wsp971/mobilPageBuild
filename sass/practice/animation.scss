@@ -338,6 +338,45 @@ a{
     overflow: hidden;
 }
 
+
+//魔性的火火火   是用scale3d 制作
+
+
+.fire{
+    width: 200px;
+    height: 100px;
+    background:red;
+    &:before{
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAcBAMAAACJyGLdAAAALVBMVEVHcEz////////////////////////////////////////////////////////NXt0CAAAADnRSTlMA9Sw/qV/FfZDocBzVDiyZhvgAAADiSURBVBjTXZA9CsJAEIWHGP+iNrZC0EKwCmIniOQEItiKBA8gdnYhrY2NffAEQS/gEUSPsPgTBXlncGajRnyww3w7u8ybIWIZR0qVX/9AAZsUTFxTKELVv9AHPOMDM+CcHyZ5BsDNquqUygxoPQVyFAksMWdwOja0agyDMaAxJirZIbAQeogVltuV2KYToEKvxGU2OOF636MGQ0AD4GIGlJXH2orFNg9S4eBWuAN3HkpF23egtuTjpt3ucSHa4f6eie1YcsPyIQOtlCyqEsZ6T7YrO1HJpD35FE3fKxjxadK/XmtSdH9Ubm+iAAAAAElFTkSuQmCC");
+        width:12px;
+        height:14px;
+        display: inline-block;
+        background-size: 100% 100%;
+        content:"";
+        animation: fire .8s step-end infinite;
+        transform-origin: center bottom;
+        @at-root {
+            @keyframes fire {
+                0%,100%{
+                    transform: scale3d(1,1,1);
+                }
+                25%{
+                    transform: scale3d(-1.2,1.2,1);
+                }
+                50%{
+                    transform: scale3d(-1,1,1);
+                }
+                75%{
+                    transform: scale3d(1.2,1.2,1);
+                }
+            }
+        }
+    }
+}
+
+
+
+
 .appcontainer{
     width: 375px;
     height: 667px;
