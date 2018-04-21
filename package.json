@@ -24,6 +24,12 @@
     "gulp-sass": "^3.1.0",
     "gulp-uglifycss": "^1.0.9"
   },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "iOS 7",
+    "not ie < 8"
+  ],
   "devDependencies": {
     "autoprefixer": "^8.3.0",
     "cssnext": "^1.8.4",
@@ -36,6 +42,10 @@
     "gulp-rev-collector": "^1.2.4",
     "gulp-sequence": "^1.0.0",
     "node-sass-import-once": "^1.2.0",
+    "pixrem": "^4.0.1",
+    "postcss-color-rgba-fallback": "^3.0.0",
+    "postcss-opacity": "^5.0.0",
+    "postcss-pseudoelements": "^5.0.0",
     "precss": "^3.1.2"
   }
 }

@@ -1,0 +1,32 @@
+/*post css 练习样式 */
+
+
+.flex{
+  display: flex;
+}
+
+
+.rgba-fallback{
+  background: rgba(0,0,0,.5);
+  color: #fff;
+}
+
+
+.opacity{
+  background: #000;
+  opacity: .5;
+}
+
+.doc{
+  background: #ccc;
+  ::before{
+    content:"";
+    display:inline-block;
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.remFallback { height: 10rem; font: 2rem Arial; line-height: 1.5em;}
+
+.remFallback::before { content: ''; line-height: 1rem; };
