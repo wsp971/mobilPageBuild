@@ -8,7 +8,30 @@ var gulpSequence = require("gulp-sequence");        /*保证依赖任务顺序�
 var git = require("gulp-git");                      /*git 提交文件*/
 var connect = require("gulp-connect");              /*web静态服务器*/
 var importOnce = require('node-sass-import-once');     /*sass编译,解决sass import 重复引入的问题*/
-var base64 = require("gulp-base64");
+// var base64 = require("gloginulp-base64");
+
+
+require("./postcss.gulpfile");                      /*引入postcss 构建脚本*/
+
+
+/**
+ * postcss 相关 内容
+ *
+ * */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
