@@ -167,7 +167,7 @@ gulp.task('minify', function(cb){
 //开发过程中要监听文件，之后编译
 gulp.task("watch",function(){
     console.log("task watch start...");
-    var watcher = gulp.watch(['./sass/**/*.scss','./html/**/*.html', './images/**/*.png'],['sass','reload']);
+    var watcher = gulp.watch(['./sass/**/*.scss','./html/**/*.html', './images/**/*.png','./js/*.js'],['sass','likezepto','reload']);
     watcher.on("change", function(event){
         console.log("File: " + event.path + " was " + event.type + ",   run tasks...");
     });
