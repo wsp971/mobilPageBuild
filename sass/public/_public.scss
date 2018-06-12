@@ -66,7 +66,7 @@ $imgPath : '../../images';
   transform: translate3d(-50%, -50%, 0);
 }
 
-.hidden{
+%hidden{
   width: 0;
   height: 0;
   overflow: hidden;

@@ -4,9 +4,12 @@ function Animal(name){
         console.log(this.name + "eating...");
     }
 }
+
 Animal.prototype.say = function(){
     console.log("hi my name is " + this.name);
 }
+
+
 
 /*继承一 原型链继承*/
 function Cat(name){
@@ -14,6 +17,9 @@ function Cat(name){
 }
 Cat.prototype = new Animal(name);
 Cat.prototype.name = "name"
+
+
+
 
 /*继承2   构造继承*/
 function Cat2(name){

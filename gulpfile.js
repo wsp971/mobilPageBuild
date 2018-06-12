@@ -10,6 +10,14 @@ var connect = require("gulp-connect");              /*web静态服务器*/
 var importOnce = require('node-sass-import-once');     /*sass编译,解决sass import 重复引入的问题*/
 var base64 = require("gulp-base64");
 
+var uglifyjs = require('gulp-uglify');              /** 压缩js */
+
+var rename = require('gulp-rename');                /**  重命名 文件*/
+
+var pump = require('pump');
+
+var concat = require('gulp-concat');                /** 合并文件*/
+
 
 
 
@@ -122,6 +130,40 @@ gulp.task("build",gulpSequence("clean","releasecss","releasehtml"));
 
 
 
+
+//gulp js
+
+
+gulp.task('likezepto',function(){
+	var module = ['module2','likeZepto'];
+	var baseUrl = './js/';
+	var destUrl = './js/dest/'
+	function moduleUrl(){
+		return module.map(function(item, index){
+			return baseUrl + item + '.js';
+		});
+	}
+	return gulp.src(moduleUrl())
+	.pipe(concat('likeZepto.js'))
+	// .pipe(rename({suffix: '.min'}))
+	// .pipe(uglifyjs())
+	.pipe(gulp.dest(destUrl));
+});
+
+gulp.task('minify', function(cb){
+	var options = {};
+	pump([
+			gulp.src('js/dest/*.js'),
+			uglifyjs(),
+			gulp.dest('js/dest')
+		],
+		cb
+	);
+	
+});
+
+
+
 //开发过程中要监听文件，之后编译
 gulp.task("watch",function(){
     console.log("task watch start...");
@@ -189,4 +231,8 @@ gulp.task("server", function(){
 gulp.task("reload", function(){
    gulp.src("./html/**/*.html").pipe(connect.reload());
 });
+
+
+
+
 

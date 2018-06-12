@@ -116,17 +116,35 @@ i{
 
 
 .icon {
-  width: 2em; height: 2em;
-  margin: 10px;
-  vertical-align: -0.15em;
+  width: 1em;
+  height: 1em;
   fill: currentColor;
   overflow: hidden;
   transition: all .3s ease-in-out;
+  &.normal{
 
-  &:hover{
-	transform: scale(2);
+  }
+  &.small{
+	 transform: scale(.5);
+  }
+  &.smaller{
+	 transform: scale(.3);
+
+  }
+  &.big{
+	 width: 2em;
+	 height:2em;
+  }
+  &.bigger{
+	 width: 4em;
+	 height:4em;
   }
   &.red{
 	fill: red;
   }
+
+}
+
+.icon-container{
+   font-size:16px;
 }
